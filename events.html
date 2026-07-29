@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L.V Marie — Events & Cake School | Vaughan</title>
+<meta name="description" content="Private parties, cake school, corporate events, and custom cakes in Vaughan.">
+<meta name="theme-color" content="#2C2825">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+  background: var(--cream);
+  height: -webkit-fill-available;
+}
+
+body {
+  touch-action: manipulation;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100svh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body.menu-open { overflow: hidden; }
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+button, input, select, textarea { font-family: inherit; }
+
+/* ===== COLOR SYSTEM ===== */
+:root {
+  --cream: #F7F4F0;
+  --blush: #EDE0DA;
+  --gold: #B8975A;
+  --charcoal: #2C2825;
+  --warm-grey: #8A7E74;
+  --berry: #6B2D3C;
+  --powder: #D8E0EA;
+  --white: #FFFCFA;
+  --radius: 2px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.section-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: var(--charcoal);
+  margin-bottom: 0.5em;
+}
+
+.section-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  color: var(--warm-grey);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.gold-line {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.4rem 0;
+}
+
+.gold-line.center { margin-left: auto; margin-right: auto; }
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(247, 244, 240, 0.94);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(184, 151, 90, 0.12);
+  transition: background 0.4s ease, border-color 0.4s ease;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.nav.scrolled,
+.nav.menu-open {
+  background: rgba(247, 244, 240, 0.98);
+  border-bottom-color: rgba(184, 151, 90, 0.2);
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  position: relative;
+  gap: 1rem;
+}
+
+.nav-left {
+  display: block;
+  min-width: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  display: inline;
+  vertical-align: bottom;
+}
+
+.nav-logo em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.nav-location {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--warm-grey);
+  white-space: nowrap;
+  line-height: 1;
+  display: inline;
+  vertical-align: bottom;
+  margin-left: 0.75rem;
+  transition: color 0.3s;
+}
+
+.nav-location:hover { color: var(--gold); }
+
+.nav-end {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-right: 0.15rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--charcoal);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.nav-cta {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--charcoal);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius);
+  transition: background 0.3s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 0;
+}
+
+.nav-toggle span {
+  width: 20px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: all 0.3s;
+  display: block;
+  flex-shrink: 0;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--white);
+  color: var(--charcoal);
+}
+
+.btn-primary:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 252, 250, 0.45);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--charcoal);
+  border-color: var(--white);
+}
+
+.btn-dark {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background: var(--gold);
+}
+
+.btn-sm {
+  padding: 0.75rem 1.8rem;
+  font-size: 0.64rem;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  min-height: 100lvh;
+  min-height: -webkit-fill-available;
+  min-height: var(--app-height, 100lvh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--charcoal);
+  padding:
+    calc(68px + env(safe-area-inset-top, 0px))
+    1.25rem
+    0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #2C2825;
+  background-image: url('Assets/images/store-interior.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(44, 40, 37, 0.48) 0%, rgba(44, 40, 37, 0.3) 45%, rgba(44, 40, 37, 0.62) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 1rem 1.25rem;
+  max-width: 720px;
+  width: 100%;
+  margin: 0;
+}
+
+.hero-brand {
+  display: none;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 8vw, 5.2rem);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: rgba(232, 210, 168, 0.95);
+}
+
+.hero-tagline {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  color: rgba(255, 252, 250, 0.9);
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 auto 2.4rem;
+  max-width: 420px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero .btn-outline {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.hero .btn-outline:hover {
+  background: var(--white);
+  color: var(--charcoal);
+  border-color: var(--white);
+}
+
+.hero .btn-primary {
+  background: var(--white);
+  color: var(--charcoal);
+}
+
+.hero .btn-primary:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* ===== INTRO STRIP ===== */
+.intro {
+  padding: 5.5rem 2rem;
+  background: var(--white);
+  text-align: center;
+}
+
+.intro-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.intro .section-label { margin-bottom: 1.2rem; }
+
+.intro p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  color: var(--warm-grey);
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+.intro-accent {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  margin-top: 1.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* ===== EVENT SECTIONS ===== */
+.event-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.event-section.reverse .event-image { order: 2; }
+.event-section.reverse .event-text { order: 1; }
+
+.event-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.event-section:hover .event-image img {
+  transform: scale(1.03);
+}
+
+.event-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4.5rem 5rem;
+  background: var(--cream);
+}
+
+.event-section:nth-child(even) .event-text {
+  background: var(--blush);
+}
+
+.event-text h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+  margin-bottom: 0;
+  color: var(--charcoal);
+}
+
+.event-text .event-desc {
+  font-size: 0.92rem;
+  color: var(--warm-grey);
+  line-height: 1.85;
+  margin-bottom: 1.75rem;
+  max-width: 440px;
+}
+
+.event-text .event-details {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+  line-height: 1.65;
+}
+
+.event-text .gold-line {
+  margin: 1.15rem 0 1.4rem;
+}
+
+/* ===== HOW IT WORKS ===== */
+.how-it-works {
+  padding: 7rem 2rem;
+  background: var(--white);
+  text-align: center;
+}
+
+.how-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+  text-align: left;
+}
+
+.how-step {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gold);
+}
+
+.how-step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.how-step h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+  color: var(--charcoal);
+}
+
+.how-step p {
+  font-size: 0.88rem;
+  color: var(--warm-grey);
+  line-height: 1.8;
+}
+
+/* ===== INQUIRY FORM ===== */
+.inquiry {
+  padding: 7rem 2rem;
+  background: var(--cream);
+}
+
+.inquiry-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inquiry .section-title { margin-bottom: 0.3em; }
+.inquiry .section-subtitle { margin-bottom: 2.5rem; }
+
+.inquiry-form {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(138, 126, 116, 0.25);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  background: var(--white);
+  border-radius: var(--radius);
+  transition: border-color 0.3s ease;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A7E74' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-submit {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255, 252, 250, 0.55);
+  padding: 4.5rem 2rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+}
+
+.footer-brand h3 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.footer-boutique-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-boutique-link:hover {
+  color: var(--white);
+}
+
+.footer h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+
+.footer ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer ul li a,
+.footer ul li span {
+  font-size: 0.84rem;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover { color: var(--gold); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 252, 250, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.76rem;
+}
+
+.footer-bottom a { color: var(--gold); }
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 1rem 2.2rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 400;
+  z-index: 3000;
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  text-align: center;
+  max-width: 90vw;
+  border: 1px solid rgba(184, 151, 90, 0.25);
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .event-text { padding: 3.5rem 3rem; }
+  .how-steps { gap: 2rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 1rem; height: 60px; }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+  .mobile-menu.open {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: calc(60px + env(safe-area-inset-top, 0px) + 2.75rem) 1.75rem calc(env(safe-area-inset-bottom, 0px) + 2rem);
+    background: #F7F4F0 !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    padding: 1.15rem 0.1rem;
+    border-bottom: 1px solid rgba(44, 40, 37, 0.1);
+    color: var(--charcoal);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  .nav-toggle {
+    display: flex;
+    position: relative;
+    z-index: 1301;
+  }
+  .nav.menu-open {
+    z-index: 1300;
+    background: #F7F4F0 !important;
+  }
+  .nav.menu-open .nav-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .nav.menu-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .nav-end { gap: 0.25rem; }
+  .nav-cta { padding: 0.5rem 0.85rem; font-size: 0.58rem; height: 34px; }
+  .nav-location {
+    font-size: 0.55rem;
+    letter-spacing: 0.06em;
+    max-width: 38vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-logo { font-size: 1.2rem; }
+
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+    min-height: 100lvh;
+    min-height: -webkit-fill-available;
+    min-height: var(--app-height, 100lvh);
+    padding:
+      calc(60px + env(safe-area-inset-top, 0px))
+      1rem
+      0;
+  }
+  .hero-content { padding: 0.75rem; }
+  .hero h1 { font-size: 2.35rem; }
+  .hero-buttons { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .hero-buttons .btn { flex: 1 1 auto; min-width: 140px; }
+
+  .event-section,
+  .event-section.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .event-section.reverse .event-image,
+  .event-section.reverse .event-text {
+    order: unset;
+  }
+
+  .event-image { min-height: 300px; max-height: 380px; }
+  .event-text { padding: 3rem 1.8rem; }
+
+  .how-steps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .inquiry-form { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.4rem; }
+  .section-title { font-size: 1.75rem; }
+  .intro { padding: 4rem 1.5rem; }
+  .how-it-works { padding: 5rem 1.5rem; }
+  .inquiry { padding: 5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="events.html" class="nav-logo">L.V. <em>Marie</em></a>
+      <a href="https://maps.google.com/?q=8400+Jane+St+Vaughan+ON" target="_blank" rel="noopener" class="nav-location">8400 Jane St, Vaughan</a>
+    </div>
+    <div class="nav-end">
+      <div class="nav-links" id="navLinksDesktop">
+        <a href="#about">About</a>
+        <a href="index.html#store">Shop</a>
+        <a href="#events" class="active">Events</a>
+        <a href="#inquiry">Contact</a>
+        <a href="index.html#gallery">Gallery</a>
+      </div>
+      <div class="nav-actions">
+        <a href="index.html" class="nav-cta">Patisserie</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="navLinks" hidden>
+  <a href="#about">About</a>
+  <a href="index.html#store">Shop</a>
+  <a href="#events">Events</a>
+  <a href="#inquiry">Contact</a>
+  <a href="index.html#gallery">Gallery</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="L.V Marie Cake School"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>L.V.<em>Marie</em></h1>
+    <p class="hero-tagline">Private parties, workshops &amp; custom cakes</p>
+    <div class="hero-buttons">
+      <a href="#inquiry" class="btn btn-primary">Inquire</a>
+      <a href="#private-parties" class="btn btn-outline">Experiences</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="intro-inner fade-in">
+    <p class="section-label">Cake School</p>
+    <p>Parties, workshops, and custom cakes in our Vaughan studio.</p>
+    <p class="intro-accent">Learn. Create. Inspire.</p>
+  </div>
+</section>
+
+<!-- EVENT TYPES -->
+<div id="events">
+
+  <section class="event-section" id="private-parties">
+    <div class="event-image">
+      <img src="Assets/images/cupcakes.jpg" alt="Celebration cake" loading="lazy">
+    </div>
+    <div class="event-text fade-in">
+      <h2>Private Parties</h2>
+      <div class="gold-line"></div>
+      <p class="event-desc">Showers, birthdays, and small celebrations in studio.</p>
+      <a href="#inquiry" class="btn btn-dark btn-sm" data-event="Private Party">Inquire</a>
+    </div>
+  </section>
+
+  <section class="event-section reverse" id="workshops">
+    <div class="event-image">
+      <img src="Assets/images/store-interior.jpg" alt="Cake School studio" loading="lazy">
+    </div>
+    <div class="event-text fade-in">
+      <h2>Cake School</h2>
+      <div class="gold-line"></div>
+      <p class="event-desc">Piping, buttercream, and decorating — small groups.</p>
+      <a href="#inquiry" class="btn btn-dark btn-sm" data-event="Workshop">Inquire</a>
+    </div>
+  </section>
+
+  <section class="event-section" id="corporate">
+    <div class="event-image">
+      <img src="Assets/images/dessert-spread.jpg" alt="Dessert table" loading="lazy">
+    </div>
+    <div class="event-text fade-in">
+      <h2>Corporate</h2>
+      <div class="gold-line"></div>
+      <p class="event-desc">Team workshops and curated dessert events.</p>
+      <a href="#inquiry" class="btn btn-dark btn-sm" data-event="Corporate Event">Inquire</a>
+    </div>
+  </section>
+
+  <section class="event-section reverse" id="custom">
+    <div class="event-image">
+      <img src="Assets/images/cupcakes.jpg" alt="Custom celebration cake" loading="lazy">
+    </div>
+    <div class="event-text fade-in">
+      <h2>Custom Cakes</h2>
+      <div class="gold-line"></div>
+      <p class="event-desc">Weddings and milestone cakes by consultation.</p>
+      <a href="#inquiry" class="btn btn-dark btn-sm" data-event="Custom Celebration Cake">Inquire</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <div class="how-inner">
+    <p class="section-label fade-in">Process</p>
+    <h2 class="section-title fade-in">How it works</h2>
+    <div class="gold-line center fade-in"></div>
+    <div class="how-steps">
+      <div class="how-step fade-in">
+        <p class="how-step-num">01</p>
+        <h3>Plan</h3>
+        <p>Share the date, guests, and what you have in mind.</p>
+      </div>
+      <div class="how-step fade-in">
+        <p class="how-step-num">02</p>
+        <h3>Create</h3>
+        <p>We refine the details with you.</p>
+      </div>
+      <div class="how-step fade-in">
+        <p class="how-step-num">03</p>
+        <h3>Celebrate</h3>
+        <p>Arrive at the studio. We handle the rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY FORM -->
+<section class="inquiry" id="inquiry">
+  <div class="inquiry-inner">
+    <p class="section-label fade-in">Contact</p>
+    <h2 class="section-title fade-in">Inquire</h2>
+    <div class="gold-line center fade-in"></div>
+
+    <form class="inquiry-form fade-in" id="inquiryForm" onsubmit="handleInquiry(event)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="eventType">Type</label>
+        <select id="eventType" name="eventType" required>
+          <option value="" disabled selected>Select</option>
+          <option value="Private Party">Private Party</option>
+          <option value="Workshop / Cake School">Workshop</option>
+          <option value="Corporate Event">Corporate</option>
+          <option value="Custom Celebration Cake">Custom Cake</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date">
+      </div>
+      <div class="form-group">
+        <label for="guests">Guests</label>
+        <input type="number" id="guests" name="guests" min="1">
+      </div>
+      <div class="form-group full">
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn btn-dark">Send</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>L.V. <em>Marie</em></h3>
+      <p>Events & cake school · Vaughan</p>
+      <a href="index.html" class="footer-boutique-link">Patisserie →</a>
+    </div>
+    <div>
+      <h4>Experiences</h4>
+      <ul>
+        <li><a href="#private-parties">Private Parties</a></li>
+        <li><a href="#workshops">Workshops</a></li>
+        <li><a href="#corporate">Corporate</a></li>
+        <li><a href="#custom">Custom Cakes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul>
+        <li><span>8400 Jane St, Unit 5, Bldg B</span></li>
+        <li><span>Vaughan, ON</span></li>
+        <li><a href="mailto:vanessa@vmarie.ca">vanessa@vmarie.ca</a></li>
+        <li><a href="tel:+19057610088">(905) 761-0088</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 L.V Marie</span>
+    <span><a href="index.html">Patisserie</a></span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+// Fill phone screen exactly (iOS Safari gap fix)
+function setAppHeight() {
+  document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+}
+setAppHeight();
+window.addEventListener('resize', setAppHeight, { passive: true });
+
+// Nav scroll state
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Mobile nav toggle
+document.getElementById('navToggle').addEventListener('click', () => {
+  const links = document.getElementById('navLinks');
+  const nav = document.getElementById('nav');
+  const open = links.classList.toggle('open');
+  links.hidden = !open;
+  nav.classList.toggle('menu-open', open);
+  document.body.classList.toggle('menu-open', open);
+});
+
+document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', () => {
+    const links = document.getElementById('navLinks');
+    links.classList.remove('open');
+    links.hidden = true;
+    document.getElementById('nav').classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+  });
+});
+
+// Pre-fill event type from section CTAs
+document.querySelectorAll('[data-event]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const select = document.getElementById('eventType');
+    const val = btn.getAttribute('data-event');
+    for (const opt of select.options) {
+      if (opt.value === val || opt.textContent.includes(val)) {
+        select.value = opt.value;
+        break;
+      }
+    }
+  });
+});
+
+// Inquiry form
+function handleInquiry(e) {
+  e.preventDefault();
+  showToast('Received');
+  e.target.reset();
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4200);
+}
+
+// Scroll fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

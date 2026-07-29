@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Patisserie V. Marie — Artisan Desserts & Sweet Celebrations</title>
+<meta name="description" content="Handcrafted desserts in Vaughan, Ontario. Signature fruit cakes, macarons, artisan tarts, and custom celebration desserts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  touch-action: manipulation;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #2d2a26;
+  background: #faf9f7;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+button { font-family: inherit; }
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #b8975a;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  text-align: center;
+  color: #2d2a26;
+  margin-bottom: 0.4em;
+}
+.section-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  text-align: center;
+  color: #8a7e74;
+  font-style: italic;
+  margin-bottom: 3.5rem;
+  font-weight: 300;
+}
+.gold-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b8975a, transparent);
+  margin: 1.2rem auto 1.5rem;
+}
+
+/* ===== COLOR SYSTEM ===== */
+:root {
+  --cream: #faf9f7;
+  --cream-dark: #f3f0eb;
+  --blush: #f0e4de;
+  --blush-deep: #e8d5cc;
+  --gold: #b8975a;
+  --gold-light: #d4b87a;
+  --gold-pale: #f0e6d4;
+  --sage: #a8b5a0;
+  --charcoal: #2d2a26;
+  --warm-grey: #8a7e74;
+  --warm-grey-light: #b0a89e;
+  --white: #ffffff;
+  --berry: #7a3040;
+  --berry-light: #9a4a5a;
+  --soft-blue: #d0d8e4;
+  --shadow-sm: 0 2px 8px rgba(45,42,38,0.04);
+  --shadow-md: 0 8px 30px rgba(45,42,38,0.08);
+  --shadow-lg: 0 20px 60px rgba(45,42,38,0.12);
+  --radius: 3px;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(250,249,247,0.92);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(184,151,90,0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.nav.scrolled {
+  box-shadow: 0 1px 20px rgba(45,42,38,0.06);
+  background: rgba(250,249,247,0.97);
+}
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: relative;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.nav-location {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--warm-grey);
+  font-weight: 400;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.nav-location:hover {
+  color: var(--gold);
+}
+.nav-logo em {
+  font-style: italic;
+  color: var(--gold);
+}
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--charcoal);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.nav-cart {
+  position: relative;
+  cursor: pointer;
+  padding: 0.4rem;
+  transition: transform 0.2s;
+}
+.nav-cart:active { transform: scale(0.95); }
+.nav-cart svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--warm-grey);
+  fill: none;
+  stroke-width: 1.5;
+  transition: stroke 0.3s;
+}
+.nav-cart:hover svg { stroke: var(--charcoal); }
+.cart-count {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  background: var(--gold);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 600;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cart-count.show {
+  opacity: 1;
+  transform: scale(1);
+}
+.nav-cta {
+  background: var(--charcoal);
+  color: var(--white) !important;
+  padding: 0.55rem 1.4rem !important;
+  border-radius: var(--radius);
+  font-size: 0.68rem !important;
+  letter-spacing: 0.14em !important;
+  transition: all 0.3s !important;
+}
+.nav-cta:hover {
+  background: var(--gold) !important;
+  transform: translateY(-1px);
+}
+.nav-cta::after { display: none !important; }
+
+/* Mobile menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+.nav-toggle span {
+  width: 22px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: all 0.3s;
+  display: block;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--cream) 0%, var(--blush) 40%, var(--soft-blue) 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 45%, rgba(184,151,90,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 25%, rgba(122,48,64,0.04) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 85%, rgba(168,181,160,0.06) 0%, transparent 50%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 900px;
+}
+.hero-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+}
+.hero h1 {
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 0.15em;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+  color: var(--warm-grey);
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 3rem;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--charcoal);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(184,151,90,0.25);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1px solid rgba(45,42,38,0.25);
+}
+.btn-outline:hover {
+  background: var(--charcoal);
+  color: var(--white);
+  border-color: var(--charcoal);
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--white);
+}
+.btn-gold:hover {
+  background: #a08040;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(184,151,90,0.3);
+}
+.btn-sm {
+  padding: 0.7rem 1.8rem;
+  font-size: 0.65rem;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--warm-grey-light);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 35px;
+  background: var(--gold);
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.3; transform: scaleY(0.5); }
+}
+
+/* Decorative circles */
+.deco-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(184,151,90,0.1);
+  pointer-events: none;
+}
+.deco-1 { width: 350px; height: 350px; top: 8%; right: -8%; }
+.deco-2 { width: 220px; height: 220px; bottom: 12%; left: -5%; }
+.deco-3 { width: 160px; height: 160px; top: 25%; left: 8%; border-color: rgba(122,48,64,0.06); }
+.deco-4 { width: 100px; height: 100px; top: 15%; right: 20%; border-color: rgba(168,181,160,0.1); }
+
+/* ===== ANNOUNCEMENT BAR (hidden) ===== */
+.announcement { display: none; }
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  padding: 8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-image-wrap {
+  position: relative;
+}
+.about-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--blush) 0%, var(--blush-deep) 100%);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--warm-grey-light);
+  font-style: italic;
+}
+.about-accent {
+  position: absolute;
+  bottom: -25px;
+  right: -25px;
+  width: 160px;
+  height: 160px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  border-radius: var(--radius);
+}
+.about-accent .initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+}
+.about-accent .label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+.about-text .section-label { text-align: left; }
+.about-text h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.6em;
+}
+.about-text p {
+  color: var(--warm-grey);
+  margin-bottom: 1.3rem;
+  line-height: 1.85;
+  font-size: 0.92rem;
+  font-weight: 300;
+}
+.about-text .signature {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-top: 2rem;
+}
+
+/* ===== CATEGORIES ===== */
+.categories {
+  padding: 6rem 2rem;
+  background: var(--white);
+}
+.categories-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.category-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid rgba(184,151,90,0.1);
+  border-radius: var(--radius);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  background: var(--cream);
+}
+.category-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.category-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+.category-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+.category-card p {
+  font-size: 0.82rem;
+  color: var(--warm-grey);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ===== STORE ===== */
+.store {
+  padding: 7rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.store-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  color: var(--warm-grey);
+  transition: all 0.3s;
+  border-radius: var(--radius);
+  font-weight: 500;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--charcoal);
+  color: var(--white);
+  border-color: var(--charcoal);
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.product-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.product-image {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--blush) 0%, var(--cream-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+.product-image-placeholder {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--warm-grey-light);
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+.product-badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background: var(--gold);
+  color: white;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  font-weight: 500;
+}
+.product-info {
+  padding: 1.3rem 1.5rem 1.5rem;
+}
+.product-category {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 0.35rem;
+}
+.product-desc {
+  font-size: 0.82rem;
+  color: var(--warm-grey);
+  margin-bottom: 1rem;
+  line-height: 1.55;
+  font-weight: 300;
+}
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.product-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--charcoal);
+}
+.product-price small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: var(--warm-grey-light);
+  font-weight: 300;
+}
+
+/* Quantity selector */
+.qty-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--warm-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-weight: 300;
+}
+.qty-btn:hover {
+  background: var(--blush);
+  color: var(--charcoal);
+}
+.qty-value {
+  width: 34px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  height: 34px;
+  line-height: 34px;
+}
+.add-to-cart {
+  background: var(--charcoal);
+  color: white;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-radius: var(--radius);
+}
+.add-to-cart:hover {
+  background: var(--gold);
+}
+.add-to-cart.added {
+  background: var(--sage);
+}
+
+/* Flavor chips */
+.flavor-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.flavor-chip {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.68rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+  color: var(--warm-grey);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+.flavor-chip:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.flavor-chip.selected {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+}
+
+/* ===== FRUIT CAKE SPOTLIGHT ===== */
+.fruit-cake {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #2d2a26 0%, #3a2d28 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.fruit-cake::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 25% 50%, rgba(184,151,90,0.08) 0%, transparent 60%);
+}
+.fruit-cake-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.fruit-cake-text .section-label { text-align: left; color: var(--gold-light); }
+.fruit-cake-text .section-title { text-align: left; color: white; }
+.fruit-cake-text .gold-line { margin: 1rem 0 1.5rem; }
+.fruit-cake-text p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1.3rem;
+  line-height: 1.85;
+  font-size: 0.92rem;
+  font-weight: 300;
+}
+.fruit-cake-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fruit-cake-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--berry) 0%, #5a1a28 100%);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  position: relative;
+  overflow: hidden;
+}
+.fruit-cake-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fruit-cake-image::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(184,151,90,0.15);
+  pointer-events: none;
+}
+
+/* ===== EVENTS ===== */
+.events {
+  padding: 8rem 2rem;
+  background: var(--blush);
+}
+.events-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.event-card {
+  background: var(--white);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+}
+.event-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.event-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.event-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: var(--charcoal);
+}
+.event-card p {
+  font-size: 0.88rem;
+  color: var(--warm-grey);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.events-cta {
+  text-align: center;
+}
+.events-cta p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--warm-grey);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== INSTAGRAM FEED ===== */
+.instagram {
+  padding: 6rem 2rem;
+  background: var(--white);
+  text-align: center;
+}
+.instagram-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.instagram-item {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--blush) 0%, var(--cream-dark) 100%);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.instagram-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.instagram-item:hover img {
+  transform: scale(1.08);
+}
+.instagram-item::after {
+  content: '@patisserievmarie';
+  position: absolute;
+  inset: 0;
+  background: rgba(45,42,38,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.instagram-item:hover::after {
+  opacity: 1;
+}
+.instagram-handle {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--warm-grey);
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+.instagram-handle:hover { color: var(--gold); }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  padding: 7rem 2rem;
+  background: var(--cream);
+}
+.testimonials-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.testimonial {
+  padding: 2.5rem;
+  border: 1px solid rgba(184,151,90,0.12);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+}
+.testimonial p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.testimonial-author {
+  font-size: 0.75rem;
+  color: var(--warm-grey);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  padding: 7rem 2rem;
+  background: var(--white);
+}
+.contact-inner {
+  max-width: 750px;
+  margin: 0 auto;
+}
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group.full {
+  grid-column: 1 / -1;
+}
+.form-group label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-grey);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.85rem 1rem;
+  border: 1px solid #ddd;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  border-radius: var(--radius);
+  transition: all 0.3s;
+  outline: none;
+  font-weight: 300;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,151,90,0.1);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.form-submit {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.55);
+  padding: 5rem 2rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.footer-brand h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.footer-brand h3 em { color: var(--gold); font-style: italic; }
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.3s;
+  font-weight: 500;
+}
+.footer-social a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.footer h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 1.3rem;
+  font-weight: 400;
+}
+.footer ul li {
+  margin-bottom: 0.7rem;
+}
+.footer ul li a,
+.footer ul li span {
+  font-size: 0.85rem;
+  transition: color 0.3s;
+  font-weight: 300;
+}
+.footer ul li a:hover { color: var(--gold); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 300;
+}
+.footer-bottom a { color: var(--gold); }
+
+/* ===== CART SIDEBAR ===== */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45,42,38,0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s;
+}
+.cart-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  max-width: 90vw;
+  background: var(--white);
+  z-index: 2001;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+}
+.cart-overlay.open .cart-sidebar {
+  transform: translateX(0);
+}
+.cart-header {
+  padding: 1.8rem 2rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-header h3 {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+.cart-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--warm-grey);
+  padding: 0.2rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.cart-close:hover { color: var(--charcoal); }
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  -webkit-overflow-scrolling: touch;
+}
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #f0eeeb;
+}
+.cart-item-image {
+  width: 65px;
+  height: 65px;
+  background: var(--blush);
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cart-item-details {
+  flex: 1;
+  min-width: 0;
+}
+.cart-item-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.92rem;
+  color: var(--charcoal);
+  margin-bottom: 0.2rem;
+}
+.cart-item-meta {
+  font-size: 0.75rem;
+  color: var(--warm-grey-light);
+  margin-bottom: 0.4rem;
+  font-weight: 300;
+}
+.cart-item-total {
+  font-weight: 600;
+  color: var(--charcoal);
+  font-size: 0.88rem;
+}
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--warm-grey-light);
+  font-size: 0.72rem;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 0.3rem;
+  font-family: 'Inter', sans-serif;
+}
+.cart-item-remove:hover { color: var(--berry); }
+.cart-empty {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--warm-grey);
+}
+.cart-empty p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.cart-footer {
+  padding: 2rem;
+  border-top: 1px solid #eee;
+  background: var(--cream);
+}
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 300;
+}
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #ddd;
+}
+.cart-footer .btn {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+.cart-note {
+  font-size: 0.72rem;
+  color: var(--warm-grey-light);
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--charcoal);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  z-index: 3000;
+  transform: translateY(120px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-weight: 400;
+  box-shadow: var(--shadow-lg);
+}
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+  .about { grid-template-columns: 1fr; gap: 3rem; }
+  .about-image-wrap { max-width: 400px; margin: 0 auto; }
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .fruit-cake-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .fruit-cake-visual { order: -1; }
+  .events-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links { 
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(184,151,90,0.1);
+    box-shadow: var(--shadow-md);
+  }
+  .nav-links.mobile-open { display: flex; }
+  .nav-toggle { display: flex; }
+  .nav-inner { padding: 0 1.2rem; }
+  .nav-left { gap: 0.6rem; }
+  .nav-logo { font-size: 1.1rem; }
+  .nav-location { font-size: 0.6rem; }
+  .hero h1 { font-size: 2.8rem; }
+  .hero-content { padding: 1.5rem; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .hero-buttons .btn { width: 100%; max-width: 280px; }
+  .categories-grid { grid-template-columns: 1fr; max-width: 350px; margin: 0 auto; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+  .product-info { padding: 0.8rem 1rem 1rem; }
+  .product-category { font-size: 0.6rem; }
+  .product-name { font-size: 0.95rem; }
+  .product-desc { font-size: 0.75rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .product-price { font-size: 1rem; }
+  .product-footer { flex-direction: row; align-items: center; }
+  .product-footer .add-to-cart { padding: 0.5rem 0.8rem; font-size: 0.6rem; }
+  .qty-btn { width: 28px; height: 28px; font-size: 0.9rem; }
+  .qty-value { width: 28px; height: 28px; line-height: 28px; font-size: 0.75rem; }
+  .store-filters { 
+    position: sticky; 
+    top: 64px; 
+    z-index: 10; 
+    background: var(--cream); 
+    padding: 0.8rem 0; 
+    margin: 0 -1.5rem 2rem; 
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem; 
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .filter-btn { 
+    padding: 0.5rem 1.2rem; 
+    font-size: 0.62rem; 
+    white-space: nowrap; 
+  }
+  .contact-form { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-accent { width: 130px; height: 130px; bottom: -15px; right: -15px; }
+  .about-accent .initials { font-size: 1.8rem; }
+  .product-badge { font-size: 0.55rem; padding: 0.25rem 0.6rem; }
+  .flavor-chips { gap: 0.3rem; }
+  .flavor-chip { padding: 0.25rem 0.6rem; font-size: 0.6rem; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.3rem; }
+  .section-title { font-size: 1.8rem; }
+  .section-subtitle { font-size: 1rem; }
+  .about { padding: 5rem 1.5rem; }
+  .store { padding: 5rem 1.5rem; }
+  .fruit-cake { padding: 5rem 1.5rem; }
+  .events { padding: 5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">V.<em>Marie</em></a>
+      <a href="https://maps.google.com/?q=8400+Jane+St+Vaughan+ON" target="_blank" class="nav-location">8400 Jane St, Vaughan</a>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#store" class="active">Shop</a>
+      <a href="#fruit-cake">Fruit Cakes</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-cart" id="cartToggle">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="deco-ring deco-1"></div>
+  <div class="deco-ring deco-2"></div>
+  <div class="deco-ring deco-3"></div>
+  <div class="deco-ring deco-4"></div>
+  <div class="hero-content">
+    <h1>Where Every Bite is <em>Art</em></h1>
+    <p class="hero-tagline">Handcrafted desserts for life's most beautiful moments</p>
+    <div class="hero-buttons">
+      <a href="#store" class="btn btn-primary">Shop</a>
+      <a href="#events" class="btn btn-outline">Plan Your Event</a>
+    </div>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  <p>✦ Our signature fruit cakes are now available for pre-order — the perfect centrepiece for your celebration ✦</p>
+</div>
+
+<!-- STORE -->
+<section class="store" id="store">
+  <p class="section-label" style="text-align:center">Our Patisserie</p>
+  <h2 class="section-title fade-in">The Collection</h2>
+  <div class="gold-line fade-in"></div>
+
+  <div class="store-filters fade-in">
+    <button class="filter-btn" onclick="filterProducts('mini')">Mini Pastries</button>
+    <button class="filter-btn" onclick="filterProducts('tarts')">Tarts</button>
+    <button class="filter-btn" onclick="filterProducts('verrine')">Verrine Cups</button>
+    <button class="filter-btn" onclick="filterProducts('trees')">Dessert Trees</button>
+    <button class="filter-btn" onclick="filterProducts('fruit')">Fruit Cakes</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+    <!-- Products rendered by JS -->
+  </div>
+</section>
+
+<!-- FRUIT CAKE SPOTLIGHT -->
+<section class="fruit-cake" id="fruit-cake">
+  <div class="fruit-cake-inner">
+    <div class="fruit-cake-text fade-in">
+      <p class="section-label">Signature Collection</p>
+      <h2 class="section-title">Our Fruit Cakes</h2>
+      <div class="gold-line"></div>
+      <p class="section-subtitle" style="text-align:left;color:var(--gold-light);margin-bottom:1.5rem">A tradition of richness and elegance</p>
+      <p>Our fruit cakes are the crown jewel of Patisserie V. Marie. Each one is carefully crafted with a luxurious blend of premium dried fruits — cherries, berries, and candied citrus — folded into a rich, spiced cake that's been perfected through years of dedication.</p>
+      <p>Whether adorned with a cascade of fresh strawberries and cherries, or elegantly decorated with gold script for milestone celebrations, our fruit cakes are designed to be the centrepiece of your most memorable moments.</p>
+      <div style="margin-top:2rem">
+        <a href="#contact" class="btn btn-gold">Inquire About Fruit Cakes</a>
+      </div>
+    </div>
+    <div class="fruit-cake-visual fade-in">
+      <div class="fruit-cake-image">
+        [Fruit Tower Photo]
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="events-inner">
+    <p class="section-label" style="text-align:center">Celebrations</p>
+    <h2 class="section-title fade-in">Make It Unforgettable</h2>
+    <p class="section-subtitle fade-in">Custom desserts and experiences for every occasion</p>
+    <div class="gold-line fade-in"></div>
+
+    <div class="events-grid">
+      <div class="event-card fade-in">
+        <span class="event-icon">💒</span>
+        <h3>Wedding Cakes</h3>
+        <p>From elegant multi-tier designs to intimate celebration cakes, we create wedding desserts that are as beautiful as your love story. Custom consultations available.</p>
+        <a href="#contact" class="btn btn-outline btn-sm">Inquire Now</a>
+      </div>
+      <div class="event-card fade-in">
+        <span class="event-icon">🎉</span>
+        <h3>Private Events</h3>
+        <p>Birthday parties, showers, corporate gatherings — we design custom sweet tables and dessert spreads tailored to your celebration, from macaron towers to full pastry selections.</p>
+        <a href="#contact" class="btn btn-outline btn-sm">Plan Your Event</a>
+      </div>
+      <div class="event-card fade-in">
+        <span class="event-icon">🎓</span>
+        <h3>Cake School</h3>
+        <p>Learn the art of cake decorating in our beautiful Vaughan studio. Hands-on classes for all skill levels — from piping basics to advanced buttercream techniques.</p>
+        <a href="#contact" class="btn btn-outline btn-sm">View Classes</a>
+      </div>
+    </div>
+
+    <div class="events-cta fade-in">
+      <p>Ready to make your event something extraordinary?</p>
+      <a href="#contact" class="btn btn-primary">Start Planning</a>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="instagram">
+  <p class="section-label" style="text-align:center">Follow Us</p>
+  <h2 class="section-title fade-in">@patisserievmarie</h2>
+  <div class="gold-line fade-in"></div>
+  <div class="instagram-grid fade-in">
+    <div class="instagram-item"><div class="about-image-placeholder">[Cake Photo]</div></div>
+    <div class="instagram-item"><div class="about-image-placeholder">[Fruit Tower]</div></div>
+    <div class="instagram-item"><div class="about-image-placeholder">[Macarons]</div></div>
+    <div class="instagram-item"><div class="about-image-placeholder">[Wedding Cake]</div></div>
+  </div>
+  <a href="https://instagram.com/patisserievmarie" target="_blank" class="instagram-handle fade-in">
+    View on Instagram →
+  </a>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label" style="text-align:center">Kind Words</p>
+  <h2 class="section-title fade-in">What Our Clients Say</h2>
+  <div class="gold-line fade-in"></div>
+  <div class="testimonials-grid">
+    <div class="testimonial fade-in">
+      <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+      <p>"The fruit cake was absolutely stunning — a true centrepiece at our wedding. Every guest asked where it was from. The flavour was incredible, moist and rich without being heavy."</p>
+      <span class="testimonial-author">— Sarah & James</span>
+    </div>
+    <div class="testimonial fade-in">
+      <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+      <p>"We ordered a full sweet table for our corporate event and Patisserie V. Marie exceeded every expectation. The macaron tree was breathtaking, and every single verrine was divine."</p>
+      <span class="testimonial-author">— Michelle R.</span>
+    </div>
+    <div class="testimonial fade-in">
+      <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+      <p>"The cake decorating class was so much fun! The studio is gorgeous, the instruction was clear and patient, and I actually took home a beautiful cake I made myself."</p>
+      <span class="testimonial-author">— Madison L.</span>
+    </div>
+    <div class="testimonial fade-in">
+      <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+      <p>"I've been ordering from V. Marie for every family celebration. The mini pastries are always perfectly made, and the attention to detail is unmatched in the GTA."</p>
+      <span class="testimonial-author">— Katherine O.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-label" style="text-align:center">Contact</p>
+    <h2 class="section-title fade-in">Let's Create Something Beautiful</h2>
+    <p class="section-subtitle fade-in">Custom orders, event planning, or just a question — reach out</p>
+    <div class="gold-line fade-in"></div>
+
+    <form class="contact-form fade-in" onsubmit="handleContact(event)">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" required placeholder="Your first name">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" required placeholder="Your last name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="(416) 555-0123">
+      </div>
+      <div class="form-group full">
+        <label>Inquiry Type</label>
+        <select>
+          <option>Custom Order</option>
+          <option>Wedding Cake</option>
+          <option>Event Sweet Table</option>
+          <option>Cake School Classes</option>
+          <option>Fruit Cake Inquiry</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your event, order, or question..."></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-image-wrap fade-in">
+    <div class="about-image">
+      <div class="about-image-placeholder">
+        [Store Interior Photo]
+      </div>
+    </div>
+    <div class="about-accent">
+      <span class="initials">V.M</span>
+      <span class="label">Patisserie</span>
+    </div>
+  </div>
+  <div class="about-text fade-in">
+    <p class="section-label">Our Story</p>
+    <h2>Crafted with Passion</h2>
+    <div class="gold-line" style="margin:1rem 0 1.5rem"></div>
+    <p>At Patisserie V. Marie, every dessert is a labour of love. From our signature fruit cakes — crowned with cascading fresh berries — to our delicate French macarons, each creation is handcrafted with the finest ingredients and an unwavering commitment to excellence.</p>
+    <p>Our Vaughan patisserie and cake school is a place where tradition meets artistry. Whether you're browsing our boutique for a sweet treat or planning the dessert table of your dreams, we bring the same level of care and creativity to every detail.</p>
+    <p class="signature">— Vanessa</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>V.<em>Marie</em></h3>
+      <p>Artisan patisserie in Vaughan, Ontario. Handcrafted desserts, custom celebration cakes, and cake decorating classes.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/patisserievmarie" target="_blank" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com/patisserievmarie" target="_blank" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PI</a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#store">Mini Pastries</a></li>
+        <li><a href="#store">Artisan Tarts</a></li>
+        <li><a href="#store">Verrine Cups</a></li>
+        <li><a href="#store">Dessert Trees</a></li>
+        <li><a href="#fruit-cake">Fruit Cakes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Events</h4>
+      <ul>
+        <li><a href="#events">Wedding Cakes</a></li>
+        <li><a href="#events">Private Events</a></li>
+        <li><a href="#events">Cake School</a></li>
+        <li><a href="#contact">Custom Orders</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit Us</h4>
+      <ul>
+        <li><span>8400 Jane St, Unit 5, Bldg B</span></li>
+        <li><span>Vaughan, ON</span></li>
+        <li><a href="mailto:vanessa@vmarie.ca">vanessa@vmarie.ca</a></li>
+        <li><a href="tel:+19057610088">(905) 761-0088</a></li>
+        <li style="margin-top:1rem"><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Patisserie V. Marie. All rights reserved.</span>
+    <span><a href="#">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Selection</h3>
+      <button class="cart-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary" onclick="submitOrder()">Submit Order Inquiry</button>
+      <button class="btn btn-outline" onclick="closeCart()" style="border-color:var(--charcoal);color:var(--charcoal);">Continue Shopping</button>
+      <p class="cart-note">We'll confirm your order and arrange pickup or delivery.<br>No payment required at this stage.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== PRODUCT DATA =====
+const products = [
+  // Mini Pastries — $2.50 each
+  { id: 1, name: 'Mini Cheesecake', category: 'mini', price: 2.50, desc: 'Creamy, rich cheesecake in a bite-sized form' },
+  { id: 2, name: 'Mini S\'mores Tart', category: 'mini', price: 2.50, desc: 'Graham cracker, chocolate & toasted marshmallow' },
+  { id: 3, name: 'Mini Apple Tart', category: 'mini', price: 2.50, desc: 'Caramelized apple on buttery pastry' },
+  { id: 4, name: 'Mini Pecan Tart', category: 'mini', price: 2.50, desc: 'Maple pecan filling in a crisp shell' },
+  { id: 5, name: 'Mini Lemon Meringue Tart', category: 'mini', price: 2.50, desc: 'Tangy lemon curd with torched meringue' },
+  { id: 6, name: 'Mini Cannoli', category: 'mini', price: 2.50, desc: 'Crisp shell filled with sweet ricotta cream' },
+  { id: 7, name: 'Mini Eclairs', category: 'mini', price: 2.50, desc: 'Choux pastry with vanilla cream & chocolate glaze' },
+  { id: 8, name: 'Mini Cupcake', category: 'mini', price: 2.50, desc: 'Seasonal flavour with hand-piped frosting' },
+  { id: 9, name: 'Salted Caramel Cream Puff', category: 'mini', price: 2.50, desc: 'Light choux with salted caramel cream' },
+  { id: 10, name: 'Mini Bombe', category: 'mini', price: 2.50, desc: 'Vanilla custard or Nutella filled chocolate sphere' },
+  { id: 11, name: 'Macarons', category: 'mini', price: 30.00, desc: 'Box of 12 — choose your flavours', badge: 'Popular',
+    flavors: ['Chocolate', 'Vanilla', 'Pistachio', 'Salted Caramel', 'Passionfruit', 'Raspberry', 'Hazelnut'] },
+
+  // 2" Tarts — $4 each
+  { id: 12, name: 'Chocolate Crème Brûlée Tart', category: 'tarts', price: 4.00, desc: 'Rich chocolate with a caramelized sugar top' },
+  { id: 13, name: 'Apple Almond Crumble Tart', category: 'tarts', price: 4.00, desc: 'Seasonal apples with frangipane & crumble' },
+  { id: 14, name: 'Lemon Meringue Tart', category: 'tarts', price: 4.00, desc: 'Bright lemon curd with Swiss meringue' },
+  { id: 15, name: 'S\'mores Tart', category: 'tarts', price: 4.00, desc: 'Campfire classic in an elegant tart' },
+  { id: 16, name: 'Pecan Tart', category: 'tarts', price: 4.00, desc: 'Buttery pecans in maple caramel' },
+
+  // Verrine Cups — $3 each
+  { id: 17, name: 'Tiramisu Cup', category: 'verrine', price: 3.00, desc: 'Classic Italian layers in a glass' },
+  { id: 18, name: 'Strawberry Cheesecake Cup', category: 'verrine', price: 3.00, desc: 'Fresh strawberry with creamy cheesecake' },
+  { id: 19, name: 'Dulce de Leche Cup', category: 'verrine', price: 3.00, desc: 'Caramel and white chocolate layers' },
+  { id: 20, name: 'Ferrero Rocher Cup', category: 'verrine', price: 3.00, desc: 'Hazelnut, chocolate & butter layers' },
+  { id: 21, name: 'Cookies & Cream Cup', category: 'verrine', price: 3.00, desc: 'Crushed cookies with vanilla cream' },
+  { id: 22, name: 'Biscoff Cheesecake Cup', category: 'verrine', price: 3.00, desc: 'Spiced cookie butter cheesecake' },
+  { id: 23, name: 'Bueno Mousse Cup', category: 'verrine', price: 3.00, desc: 'Caramel and hazelnut mousse layers' },
+  { id: 24, name: 'Turtles Cup', category: 'verrine', price: 3.00, desc: 'Caramel, pecan & dark chocolate' },
+
+  // Trees
+  { id: 25, name: '65pc Macaron Tree', category: 'trees', price: 225.00, desc: 'A stunning display of 65 artisan macarons', badge: 'Bestseller' },
+  { id: 26, name: '65pc Cream Puff Tree', category: 'trees', price: 200.00, desc: '65 cream puffs arranged as a centrepiece' },
+  { id: 27, name: '90pc Macaron Tree', category: 'trees', price: 290.00, desc: 'Grand 90-piece macaron tree, faces forward' },
+
+  // Fruit Cakes
+  { id: 28, name: 'Signature Fruit Cake', category: 'fruit', price: 85.00, desc: 'Premium dried fruits, cherries & spices in a rich cake', badge: 'Signature' },
+  { id: 29, name: 'Berry Cascade Fruit Cake', category: 'fruit', price: 120.00, desc: 'Topped with fresh strawberries, blueberries & blackberries' },
+  { id: 30, name: 'Cherry Elegance Cake', category: 'fruit', price: 110.00, desc: 'Dense fruit cake adorned with glazed cherries & gold script' },
+  { id: 31, name: 'Celebration Fruit Tower', category: 'fruit', price: 185.00, desc: 'Tall vertical fruit display — the ultimate centrepiece', badge: 'Showstopper' },
+];
+
+// ===== CART STATE =====
+let cart = [];
+let selectedFlavors = {};
+
+// ===== RENDER PRODUCTS =====
+function renderProducts(filter = 'all') {
+  const grid = document.getElementById('productsGrid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+  grid.innerHTML = filtered.map(p => {
+    const inCart = cart.find(c => c.id === p.id);
+    const qty = inCart ? inCart.qty : 0;
+    const flavors = p.flavors ? renderFlavorChips(p) : '';
+
+    return `
+      <div class="product-card fade-in visible" data-category="${p.category}">
+        <div class="product-image">
+          ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+          <span class="product-image-placeholder">[${p.name}]</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">${categoryLabel(p.category)}</p>
+          <h3 class="product-name">${p.name}</h3>
+          <p class="product-desc">${p.desc}</p>
+          ${flavors}
+          <div class="product-footer">
+            <span class="product-price">$${p.price.toFixed(2)} ${p.category !== 'trees' && p.category !== 'fruit' && p.id !== 11 ? '<small>/each</small>' : p.id === 11 ? '<small>/box</small>' : ''}</span>
+            ${qty > 0 ? `
+              <div class="qty-selector">
+                <button class="qty-btn" onclick="updateQty(${p.id}, -1)" aria-label="Decrease quantity">−</button>
+                <span class="qty-value">${qty}</span>
+                <button class="qty-btn" onclick="updateQty(${p.id}, 1)" aria-label="Increase quantity">+</button>
+              </div>
+            ` : `
+              <button class="add-to-cart" onclick="addToCart(${p.id})">${p.flavors ? 'Add to Selection' : 'Add'}</button>
+            `}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderFlavorChips(product) {
+  if (!product.flavors) return '';
+  const selected = selectedFlavors[product.id] || [];
+  return `
+    <div class="flavor-chips">
+      ${product.flavors.map(f => `
+        <button class="flavor-chip ${selected.includes(f) ? 'selected' : ''}" 
+                onclick="toggleFlavor(${product.id}, '${f}')">${f}</button>
+      `).join('')}
+    </div>
+  `;
+}
+
+function toggleFlavor(productId, flavor) {
+  if (!selectedFlavors[productId]) selectedFlavors[productId] = [];
+  const idx = selectedFlavors[productId].indexOf(flavor);
+  if (idx > -1) {
+    selectedFlavors[productId].splice(idx, 1);
+  } else {
+    selectedFlavors[productId].push(flavor);
+  }
+  renderProducts(getCurrentFilter());
+}
+
+function categoryLabel(cat) {
+  const labels = { mini: 'Mini Pastry', tarts: 'Artisan Tart', verrine: 'Verrine Cup', trees: 'Dessert Tree', fruit: 'Fruit Cake' };
+  return labels[cat] || cat;
+}
+
+// ===== FILTER =====
+function filterProducts(category) {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const text = btn.textContent.toLowerCase();
+    let match = false;
+    if (category === 'mini') match = text.includes('mini');
+    else if (category === 'tarts') match = text.includes('tart');
+    else if (category === 'verrine') match = text.includes('verrine');
+    else if (category === 'trees') match = text.includes('tree');
+    else if (category === 'fruit') match = text.includes('fruit');
+    btn.classList.toggle('active', match);
+  });
+  renderProducts(category);
+  document.getElementById('store').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ===== CART FUNCTIONS =====
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+  const existing = cart.find(c => c.id === id);
+  const flavors = selectedFlavors[id] ? selectedFlavors[id].join(', ') : '';
+  
+  if (existing) {
+    existing.qty++;
+    if (flavors) existing.flavors = flavors;
+  } else {
+    cart.push({ ...product, qty: 1, flavors: flavors });
+  }
+  updateCart();
+  renderProducts(getCurrentFilter());
+  showToast(`${product.name} added to your selection`);
+}
+
+function updateQty(id, delta) {
+  const item = cart.find(c => c.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) {
+    cart = cart.filter(c => c.id !== id);
+  }
+  updateCart();
+  renderProducts(getCurrentFilter());
+}
+
+function removeFromCart(id) {
+  const item = cart.find(c => c.id === id);
+  cart = cart.filter(c => c.id !== id);
+  updateCart();
+  renderProducts(getCurrentFilter());
+  if (item) showToast(`${item.name} removed`);
+}
+
+function getCurrentFilter() {
+  const active = document.querySelector('.filter-btn.active');
+  if (!active) return 'all';
+  const text = active.textContent.toLowerCase();
+  if (text.includes('mini')) return 'mini';
+  if (text.includes('tart')) return 'tarts';
+  if (text.includes('verrine')) return 'verrine';
+  if (text.includes('tree')) return 'trees';
+  if (text.includes('fruit')) return 'fruit';
+  return 'all';
+}
+
+function updateCart() {
+  const countEl = document.getElementById('cartCount');
+  const itemsEl = document.getElementById('cartItems');
+  const footerEl = document.getElementById('cartFooter');
+  const subtotalEl = document.getElementById('cartSubtotal');
+  const totalEl = document.getElementById('cartTotal');
+
+  const totalItems = cart.reduce((sum, c) => sum + c.qty, 0);
+  const totalPrice = cart.reduce((sum, c) => sum + (c.price * c.qty), 0);
+
+  countEl.textContent = totalItems;
+  countEl.classList.toggle('show', totalItems > 0);
+
+  if (cart.length === 0) {
+    footerEl.style.display = 'none';
+    itemsEl.innerHTML = '<div class="cart-empty"><p>Your cart is empty</p></div>';
+    return;
+  }
+
+  footerEl.style.display = 'block';
+  subtotalEl.textContent = `$${totalPrice.toFixed(2)}`;
+  totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+  itemsEl.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-image"></div>
+      <div class="cart-item-details">
+        <p class="cart-item-name">${item.name}</p>
+        ${item.flavors ? `<p class="cart-item-meta">${item.flavors}</p>` : ''}
+        <div class="qty-selector">
+          <button class="qty-btn" onclick="updateQty(${item.id}, -1)">−</button>
+          <span class="qty-value">${item.qty}</span>
+          <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+        </div>
+        <p class="cart-item-total">$${(item.price * item.qty).toFixed(2)}</p>
+        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">Remove</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== CART OPEN/CLOSE =====
+document.getElementById('cartToggle').addEventListener('click', () => {
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+
+document.getElementById('cartClose').addEventListener('click', closeCart);
+
+document.getElementById('cartOverlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeCart();
+});
+
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ===== SUBMIT ORDER =====
+function submitOrder() {
+  if (cart.length === 0) return;
+  const total = cart.reduce((sum, c) => sum + (c.price * c.qty), 0);
+  const items = cart.map(c => {
+    let line = `${c.qty}× ${c.name} — $${(c.price * c.qty).toFixed(2)}`;
+    if (c.flavors) line += ` (${c.flavors})`;
+    return line;
+  }).join('\n');
+  
+  const message = `Order Inquiry from vmarie.ca:\n\n${items}\n\nTotal: $${total.toFixed(2)}\n\nPlease confirm availability and arrange pickup or delivery.`;
+  
+  // In production: POST to backend / email service / Shopify
+  alert('Order inquiry submitted!\n\n' + message + '\n\nIn production, this sends to vanessa@vmarie.ca');
+  cart = [];
+  selectedFlavors = {};
+  updateCart();
+  renderProducts('all');
+  closeCart();
+  showToast('Order inquiry sent — we\'ll be in touch!');
+}
+
+// ===== CONTACT FORM =====
+function handleContact(e) {
+  e.preventDefault();
+  showToast('Thank you! We\'ll get back to you within 24 hours.');
+  e.target.reset();
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// ===== PREVENT DOUBLE-TAP ZOOM =====
+document.addEventListener('touchend', (e) => {
+  const now = Date.now();
+  if (now - (e.target._lastTap || 0) < 300) {
+    e.preventDefault();
+  }
+  e.target._lastTap = now;
+}, { passive: false });
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// ===== MOBILE NAV =====
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('mobile-open');
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('mobile-open');
+  });
+});
+
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ===== KEYBOARD: Escape closes cart =====
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeCart();
+});
+
+// ===== INIT =====
+renderProducts('all');
+</script>
+
+</body>
+</html>

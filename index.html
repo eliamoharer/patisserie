@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pâtisserie V. Marie | Vaughan</title>
+<meta name="description" content="Patisserie and cake school in Vaughan. Fruit cakes, pastries, and celebrations.">
+<meta name="theme-color" content="#F7F4F0">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="page-shop">
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">V.<em>Marie</em></a>
+      <a href="https://maps.google.com/?q=8400+Jane+St+Vaughan+ON" target="_blank" rel="noopener" class="nav-location">8400 Jane St, Vaughan</a>
+    </div>
+    <div class="nav-end">
+      <div class="nav-links" id="navLinksDesktop">
+        <a href="#about">About</a>
+        <a href="#store" class="active">Shop</a>
+        <a href="events.html">Events</a>
+        <a href="#contact">Contact</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="nav-cart" id="cartToggle" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="navLinks" hidden>
+  <a href="#about">About</a>
+  <a href="#store">Shop</a>
+  <a href="events.html">Events</a>
+  <a href="#contact">Contact</a>
+  <a href="#gallery">Gallery</a>
+</div>
+
+<section class="hero hero--boutique">
+  <div class="hero-atmosphere" aria-hidden="true"></div>
+  <div class="hero-content">
+    <h1>Pâtisserie<br>V.<em>Marie</em></h1>
+    <div class="hero-buttons">
+      <a href="#store" class="btn btn-primary">Shop</a>
+      <a href="events.html" class="btn btn-outline-dark">Events</a>
+    </div>
+  </div>
+</section>
+
+<section class="intro" id="about">
+  <div class="intro-inner">
+    <div class="intro-image fade-in">
+      <img src="Assets/images/store-interior.jpg" alt="Pâtisserie V. Marie Cake School" width="800" height="1000">
+    </div>
+    <div class="intro-text fade-in">
+      <p class="section-label">Boutique</p>
+      <h2>Learn. Create. Inspire.</h2>
+      <div class="gold-line"></div>
+      <p>French-inspired pastries, fruit cakes, and cake school — in Vaughan.</p>
+      <p class="signature">— Vanessa</p>
+    </div>
+  </div>
+</section>
+
+<section class="store" id="store">
+  <div class="store-header fade-in">
+    <p class="section-label">Patisserie</p>
+    <h2 class="section-title">Collection</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="store-filters fade-in" role="tablist" aria-label="Product categories">
+    <button type="button" class="filter-btn active" data-filter="fruit">Fruit Cakes</button>
+    <button type="button" class="filter-btn" data-filter="mini">Mini Pastries</button>
+    <button type="button" class="filter-btn" data-filter="tarts">Tarts</button>
+    <button type="button" class="filter-btn" data-filter="verrine">Verrine Cups</button>
+    <button type="button" class="filter-btn" data-filter="trees">Dessert Trees</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<section class="events-band">
+  <div class="events-band-inner fade-in">
+    <p class="section-label">Events</p>
+    <h2>L.V Marie</h2>
+    <div class="gold-line"></div>
+    <p>Private parties, workshops, and custom cakes.</p>
+    <a href="events.html" class="btn btn-primary">Plan an Event</a>
+  </div>
+</section>
+
+<section class="testimonials">
+  <p class="section-label" style="text-align:center">Notes</p>
+  <h2 class="section-title" style="text-align:center">Guests</h2>
+  <div class="gold-line"></div>
+  <div class="testimonials-grid">
+    <div class="testimonial fade-in">
+      <p>"The fruit cake was the centrepiece of our wedding."</p>
+      <span class="testimonial-author">— Sarah &amp; James</span>
+    </div>
+    <div class="testimonial fade-in">
+      <p>"The macaron tree and verrines were perfect."</p>
+      <span class="testimonial-author">— Michelle R.</span>
+    </div>
+    <div class="testimonial fade-in">
+      <p>"A beautiful studio. Clear instruction. A cake I was proud of."</p>
+      <span class="testimonial-author">— Madison L.</span>
+    </div>
+    <div class="testimonial fade-in">
+      <p>"Our family celebrations always start here."</p>
+      <span class="testimonial-author">— Katherine O.</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title fade-in">Inquire</h2>
+    <div class="gold-line fade-in"></div>
+
+    <form class="contact-form fade-in" id="contactForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" required autocomplete="given-name">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" required autocomplete="family-name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" autocomplete="tel">
+      </div>
+      <div class="form-group full">
+        <label for="inquiryType">Regarding</label>
+        <select id="inquiryType">
+          <option>Order</option>
+          <option>Fruit Cake</option>
+          <option>Wedding Cake</option>
+          <option>Sweet Table</option>
+          <option>Cake School</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label for="message">Message</label>
+        <textarea id="message"></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="gallery gallery--bleed" id="gallery">
+  <p class="section-label">Instagram</p>
+  <h2 class="section-title fade-in">@patisserievmarie</h2>
+  <div class="gold-line fade-in"></div>
+  <div class="gallery-grid fade-in">
+    <div class="gallery-item"><img src="Assets/images/fruit-cherry-clean.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/cupcakes.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/macaroons.png" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/dessert-spread.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/layered-cake.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/pastry-mini.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/cupcake-lux.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/macarons-lux.jpg" alt="" loading="lazy"></div>
+  </div>
+  <a href="https://instagram.com/patisserievmarie" target="_blank" rel="noopener" class="gallery-link">Instagram</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>V.<em>Marie</em></h3>
+      <p>Vaughan, Ontario.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/patisserievmarie" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="mailto:vanessa@vmarie.ca" aria-label="Email">EM</a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#store" data-shop-filter="fruit">Fruit Cakes</a></li>
+        <li><a href="#store" data-shop-filter="mini">Mini Pastries</a></li>
+        <li><a href="#store" data-shop-filter="tarts">Tarts</a></li>
+        <li><a href="#store" data-shop-filter="trees">Dessert Trees</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>L.V Marie</h4>
+      <ul>
+        <li><a href="events.html">Private Parties</a></li>
+        <li><a href="events.html#workshops">Cake School</a></li>
+        <li><a href="events.html#corporate">Corporate</a></li>
+        <li><a href="events.html#custom">Custom Cakes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul>
+        <li><span>8400 Jane St, Unit 5, Bldg B</span></li>
+        <li><span>Vaughan, ON</span></li>
+        <li><a href="mailto:vanessa@vmarie.ca">vanessa@vmarie.ca</a></li>
+        <li><a href="tel:+19057610088">(905) 761-0088</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Pâtisserie V. Marie</span>
+    <span><a href="events.html">L.V Marie</a></span>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay">
+  <aside class="cart-sidebar" aria-label="Your selection">
+    <div class="cart-header">
+      <h3>Selection</h3>
+      <button type="button" class="cart-close" id="cartClose" aria-label="Close cart"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty"><p>Empty</p></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button type="button" class="btn btn-primary" id="submitOrder">Submit Inquiry</button>
+      <button type="button" class="btn btn-outline-dark" onclick="closeCart()">Continue</button>
+      <p class="cart-note">Pickup at the boutique. No payment yet.</p>
+    </div>
+  </aside>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Product">
+  <div class="product-modal" id="productModal"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/shop.js"></script>
+<script>
+  function setAppHeight() {
+    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+  }
+  setAppHeight();
+  window.addEventListener('resize', setAppHeight, { passive: true });
+
+  const nav = document.getElementById('nav');
+  const navLinks = document.getElementById('navLinks');
+  const navToggle = document.getElementById('navToggle');
+
+  function closeMobileMenu() {
+    navLinks.hidden = true;
+    navLinks.classList.remove('open');
+    nav.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+  }
+
+  function openMobileMenu() {
+    navLinks.hidden = false;
+    navLinks.classList.add('open');
+    nav.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+  }
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  navToggle.addEventListener('click', () => {
+    if (navLinks.classList.contains('open')) closeMobileMenu();
+    else openMobileMenu();
+  });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => closeMobileMenu());
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    showToast('Received');
+    e.target.reset();
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      io.observe(el);
+    }
+  });
+</script>
+</body>
+</html>
