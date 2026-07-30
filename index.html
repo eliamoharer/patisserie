@@ -188,7 +188,6 @@
     <div class="gallery-item"><img src="Assets/images/cupcake-lux.jpg" alt="" loading="lazy"></div>
     <div class="gallery-item"><img src="Assets/images/macarons-lux.jpg" alt="" loading="lazy"></div>
   </div>
-  <a href="https://instagram.com/patisserievmarie" target="_blank" rel="noopener" class="gallery-link">Instagram</a>
 </section>
 
 <footer class="footer">
@@ -197,8 +196,12 @@
       <h3>V.<em>Marie</em></h3>
       <p>Vaughan, Ontario.</p>
       <div class="footer-social">
-        <a href="https://instagram.com/patisserievmarie" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a href="mailto:vanessa@vmarie.ca" aria-label="Email">EM</a>
+        <a href="https://instagram.com/patisserievmarie" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="mailto:vanessa@vmarie.ca" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+        </a>
       </div>
     </div>
     <div>
@@ -268,12 +271,6 @@
 
 <script src="js/shop.js"></script>
 <script>
-  function setAppHeight() {
-    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
-  }
-  setAppHeight();
-  window.addEventListener('resize', setAppHeight, { passive: true });
-
   const nav = document.getElementById('nav');
   const navLinks = document.getElementById('navLinks');
   const navToggle = document.getElementById('navToggle');
