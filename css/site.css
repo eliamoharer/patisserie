@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
@@ -616,21 +617,21 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 .product-image img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: -1.5%;
+  top: -1.5%;
+  width: 103%;
+  height: 103%;
+  max-width: none;
   object-fit: cover;
   object-position: center center;
+  transform: scale(calc(1 / 1.03));
+  transform-origin: center center;
   transition: transform 0.7s var(--ease);
 }
-.product-image--contain {
-  background: var(--cream);
+.product-card:hover .product-image img {
+  transform: none;
 }
-.product-image--contain img {
-  object-fit: contain;
-  padding: 1.1rem;
-}
-.product-card:hover .product-image img { transform: scale(1.03); }
-.product-card:hover .product-image--contain img { transform: none; }
 .product-badge {
   position: absolute;
   top: 0.75rem;
@@ -842,6 +843,42 @@ h1, h2, h3, h4 {
   border-color: var(--charcoal);
   color: #fff;
 }
+.opt-note {
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-weight: 400;
+  color: var(--warm-grey-light);
+}
+.customize-input {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(44, 40, 37, 0.14);
+  background: var(--white);
+  color: var(--charcoal);
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 300;
+  border-radius: var(--radius);
+  outline: none;
+}
+.customize-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184, 151, 90, 0.12);
+}
+.product-image--blank {
+  background: #fff;
+}
+.cart-item-image--blank {
+  background: #fff;
+  border: 1px solid rgba(44, 40, 37, 0.06);
+}
+.product-modal--text {
+  grid-template-columns: 1fr;
+  width: min(480px, 100%);
+}
+.product-modal--text .modal-body {
+  padding-top: 2.75rem;
+}
 
 .customize-foot {
   display: flex;
@@ -875,6 +912,56 @@ h1, h2, h3, h4 {
 
 .modal-actions .customize-panel {
   animation: none;
+}
+
+.custom-cakes {
+  background: var(--cream);
+  color: var(--charcoal);
+  padding: 4.5rem 1.75rem 5rem;
+}
+.custom-cakes-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) 1fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+.custom-cakes-image {
+  overflow: hidden;
+}
+.custom-cakes-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.custom-cakes-text {
+  padding: 0;
+}
+.custom-cakes-text .section-label { color: var(--gold); text-align: left; }
+.custom-cakes-text h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  margin-bottom: 0;
+  color: var(--charcoal);
+}
+.custom-cakes-text .gold-line { margin: 1.15rem 0 1.25rem; }
+.custom-cakes-text p:not(.section-label) {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--warm-grey);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 420px;
+}
+.custom-cakes-text p a {
+  color: var(--gold);
+}
+.custom-cakes .contact-form {
+  margin-top: 0;
+}
+.custom-cakes .form-submit {
+  text-align: left;
 }
 
 /* ===== EVENTS BAND ===== */
@@ -922,13 +1009,19 @@ h1, h2, h3, h4 {
   position: relative;
 }
 .gallery-item img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: -3%;
+  top: -3%;
+  width: 106%;
+  height: 106%;
+  max-width: none;
   object-fit: cover;
   object-position: center center;
+  transform: scale(calc(1 / 1.06));
+  transform-origin: center center;
   transition: transform 0.6s var(--ease);
 }
-.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item:hover img { transform: none; }
 .gallery-link {
   display: inline-flex;
   margin: 1.5rem 0 2rem;
@@ -939,42 +1032,58 @@ h1, h2, h3, h4 {
 }
 .gallery-link:hover { color: var(--gold); }
 
-/* ===== TESTIMONIALS ===== */
-.testimonials {
+/* ===== FLAVOURS ===== */
+.flavours {
   padding: 5.5rem 1.75rem;
   background: var(--white);
+  text-align: center;
 }
-.testimonials-grid {
-  max-width: 1000px;
+.flavours-lead {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flavours-grid {
+  max-width: 1080px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  text-align: left;
 }
-.testimonial {
-  padding: 2.2rem;
-  border: 1px solid rgba(184, 151, 90, 0.14);
+.flavour-card {
   background: var(--cream);
+  border: 1px solid rgba(184, 151, 90, 0.14);
+  padding: 2rem 1.75rem 1.6rem;
 }
-.testimonial-mark {
-  color: var(--gold);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  margin-bottom: 1rem;
-}
-.testimonial p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-style: italic;
+.flavour-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 1.15rem;
   color: var(--charcoal);
-  line-height: 1.7;
-  margin-bottom: 1.3rem;
 }
-.testimonial-author {
-  font-size: 0.68rem;
+.flavour-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.flavour-card li {
+  font-size: 0.88rem;
+  color: var(--warm-grey);
+  line-height: 1.4;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(44, 40, 37, 0.06);
+}
+.flavour-card li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.flavour-card .extra {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.58rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--warm-grey);
+  color: var(--gold);
   font-weight: 500;
 }
 
@@ -1150,6 +1259,7 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid rgba(44, 40, 37, 0.06);
 }
 .cart-item-image {
+  position: relative;
   width: 64px;
   height: 64px;
   border-radius: var(--radius);
@@ -1280,6 +1390,7 @@ h1, h2, h3, h4 {
 }
 .modal-overlay.open .product-modal { transform: translateY(0) scale(1); }
 .modal-image {
+  position: relative;
   min-height: 0;
   height: min(90vh, 90dvh);
   max-height: min(90vh, 90dvh);
@@ -1292,13 +1403,6 @@ h1, h2, h3, h4 {
   object-fit: cover;
   object-position: center center;
   display: block;
-}
-.modal-image--contain {
-  background: var(--cream);
-}
-.modal-image--contain img {
-  object-fit: contain;
-  padding: 1.5rem;
 }
 .modal-body {
   padding: 2.25rem 2rem;
@@ -1418,6 +1522,10 @@ h1, h2, h3, h4 {
   .intro-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .intro-image { max-width: 380px; margin: 0 auto; }
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+  .custom-cakes { padding: 3.25rem 1.25rem 3.75rem; }
+  .custom-cakes-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .custom-cakes-image { max-width: 420px; margin: 0 auto; height: auto; min-height: 0; }
+  .custom-cakes-text { padding: 0; }
   .product-modal {
     grid-template-columns: 1fr;
     max-height: min(92vh, 92dvh);
@@ -1434,7 +1542,7 @@ h1, h2, h3, h4 {
     overflow: visible;
     padding: 1.5rem 1.35rem 1.75rem;
   }
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .flavours-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 

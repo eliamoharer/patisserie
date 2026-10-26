@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v=15">
 </head>
 <body class="page-shop">
 
@@ -24,6 +24,7 @@
       <div class="nav-links" id="navLinksDesktop">
         <a href="#about">About</a>
         <a href="#store" class="active">Shop</a>
+        <a href="#flavours">Flavours</a>
         <a href="events.html">Events</a>
         <a href="#contact">Contact</a>
         <a href="#gallery">Gallery</a>
@@ -46,6 +47,7 @@
 <div class="mobile-menu" id="navLinks" hidden>
   <a href="#about">About</a>
   <a href="#store">Shop</a>
+  <a href="#flavours">Flavours</a>
   <a href="events.html">Events</a>
   <a href="#contact">Contact</a>
   <a href="#gallery">Gallery</a>
@@ -68,11 +70,11 @@
       <img src="Assets/images/store-interior.jpg" alt="Pâtisserie V. Marie Cake School" width="800" height="1000">
     </div>
     <div class="intro-text fade-in">
-      <p class="section-label">Boutique</p>
-      <h2>Learn. Create. Inspire.</h2>
+      <p class="section-label">About</p>
+      <h2>Pâtisserie V. Marie</h2>
       <div class="gold-line"></div>
-      <p>French-inspired pastries, fruit cakes, and cake school — in Vaughan.</p>
-      <p class="signature">— Vanessa</p>
+      <p>Welcome to Patisserie V. Marie, where the art of Cake Design meets the sinful pleasures of French Pastry.</p>
+      <p>We invite you to step through the doors of our Vaughan Parisian style boutique. Only the freshest, natural and quality ingredients are used for their assortment of elegant specialty cakes, French inspired pastries and confectionery delights. These one-of-a-kind creations are not only delicious to the palate but also luscious works of art.</p>
     </div>
   </div>
 </section>
@@ -85,14 +87,61 @@
   </div>
 
   <div class="store-filters fade-in" role="tablist" aria-label="Product categories">
-    <button type="button" class="filter-btn active" data-filter="fruit">Fruit Cakes</button>
-    <button type="button" class="filter-btn" data-filter="mini">Mini Pastries</button>
-    <button type="button" class="filter-btn" data-filter="tarts">Tarts</button>
-    <button type="button" class="filter-btn" data-filter="verrine">Verrine Cups</button>
-    <button type="button" class="filter-btn" data-filter="trees">Dessert Trees</button>
+    <button type="button" class="filter-btn active" data-filter="mini">Mini Desserts</button>
+    <button type="button" class="filter-btn" data-filter="verrine">Verrines</button>
+    <button type="button" class="filter-btn" data-filter="towers">Towers</button>
+    <button type="button" class="filter-btn" data-filter="macarons">Macarons</button>
+    <button type="button" class="filter-btn" data-filter="pastries">Pastries</button>
   </div>
 
   <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<section class="custom-cakes" id="custom-cakes">
+  <div class="custom-cakes-inner">
+    <div class="custom-cakes-image fade-in">
+      <img src="Assets/images/wedding-cake.jpg" alt="Custom cake" loading="lazy">
+    </div>
+    <div class="custom-cakes-text fade-in">
+      <p class="section-label">Custom Cakes</p>
+      <h2>Request a cake</h2>
+      <div class="gold-line"></div>
+      <p>Each tier can be a different <a href="#flavours">flavour</a> at no additional charge.</p>
+      <form class="contact-form" id="cakeForm">
+        <div class="form-group">
+          <label for="cakeFirst">First Name</label>
+          <input id="cakeFirst" type="text" required autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="cakeLast">Last Name</label>
+          <input id="cakeLast" type="text" required autocomplete="family-name">
+        </div>
+        <div class="form-group">
+          <label for="cakeEmail">Email</label>
+          <input id="cakeEmail" type="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="cakePhone">Phone</label>
+          <input id="cakePhone" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="cakeDate">Date</label>
+          <input id="cakeDate" type="date" required>
+        </div>
+        <div class="form-group">
+          <label for="cakeServings">Servings</label>
+          <input id="cakeServings" type="number" min="1" inputmode="numeric">
+        </div>
+        <div class="form-group full">
+          <label for="cakeNotes">Notes</label>
+          <textarea id="cakeNotes"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
 
 <section class="events-band">
@@ -100,32 +149,59 @@
     <p class="section-label">Events</p>
     <h2>L.V Marie</h2>
     <div class="gold-line"></div>
-    <p>Private parties, workshops, and custom cakes.</p>
+    <p>Private parties, classes, and corporate events.</p>
     <a href="events.html" class="btn btn-primary">Plan an Event</a>
   </div>
 </section>
 
-<section class="testimonials">
-  <p class="section-label" style="text-align:center">Notes</p>
-  <h2 class="section-title" style="text-align:center">Guests</h2>
+<section class="flavours" id="flavours">
+  <p class="section-label">Cakes</p>
+  <h2 class="section-title">Flavours</h2>
   <div class="gold-line"></div>
-  <div class="testimonials-grid">
-    <div class="testimonial fade-in">
-      <p>"The fruit cake was the centrepiece of our wedding."</p>
-      <span class="testimonial-author">— Sarah &amp; James</span>
-    </div>
-    <div class="testimonial fade-in">
-      <p>"The macaron tree and verrines were perfect."</p>
-      <span class="testimonial-author">— Michelle R.</span>
-    </div>
-    <div class="testimonial fade-in">
-      <p>"A beautiful studio. Clear instruction. A cake I was proud of."</p>
-      <span class="testimonial-author">— Madison L.</span>
-    </div>
-    <div class="testimonial fade-in">
-      <p>"Our family celebrations always start here."</p>
-      <span class="testimonial-author">— Katherine O.</span>
-    </div>
+  <div class="flavours-grid">
+    <article class="flavour-card fade-in">
+      <h3>Sponge Cakes</h3>
+      <ul>
+        <li>Vanilla Bean</li>
+        <li>Chocolate</li>
+        <li>Marble</li>
+        <li>Lemon</li>
+        <li>French Toast</li>
+        <li>Mocha</li>
+        <li>Banana</li>
+        <li>Red Velvet</li>
+      </ul>
+    </article>
+    <article class="flavour-card fade-in">
+      <h3>Buttercream Fillings</h3>
+      <ul>
+        <li>Vanilla Bean</li>
+        <li>Vanilla bean with dulce de leche drizzle and sea salt</li>
+        <li>Chocolate</li>
+        <li>Hazelnut and Nutella</li>
+        <li>Raspberry</li>
+        <li>French Toast</li>
+        <li>Mocha</li>
+        <li>Cookies and Cream</li>
+        <li>Biscoff</li>
+        <li>Strawberry</li>
+        <li>S'more</li>
+      </ul>
+    </article>
+    <article class="flavour-card fade-in">
+      <h3>Custard Fillings</h3>
+      <ul>
+        <li>Vanilla Bean</li>
+        <li>Chocolate</li>
+        <li>Hazelnut and Nutella</li>
+        <li>Mocha</li>
+        <li>French Toast</li>
+        <li>Lemon</li>
+        <li>S'more</li>
+        <li>Strawberry Shortcake <span class="extra">Extra charge</span></li>
+        <li>Mixed Berry <span class="extra">Extra charge</span></li>
+      </ul>
+    </article>
   </div>
 </section>
 
@@ -156,10 +232,7 @@
         <label for="inquiryType">Regarding</label>
         <select id="inquiryType">
           <option>Order</option>
-          <option>Fruit Cake</option>
-          <option>Wedding Cake</option>
           <option>Sweet Table</option>
-          <option>Cake School</option>
           <option>Other</option>
         </select>
       </div>
@@ -179,14 +252,14 @@
   <h2 class="section-title fade-in">@patisserievmarie</h2>
   <div class="gold-line fade-in"></div>
   <div class="gallery-grid fade-in">
-    <div class="gallery-item"><img src="Assets/images/fruit-cherry-clean.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/cupcakes.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/macaroons.png" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/dessert-spread.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/layered-cake.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/pastry-mini.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/cupcake-lux.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/macarons-lux.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/tower-fruit-cherry.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/cupcake-real.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/macaron-raspberry.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/verrine-ferrero-rocher.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/wedding-cake.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/cream-puff.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/frutti-di-bosco-tart.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><img src="Assets/images/tower-cream-puff.jpg" alt="" loading="lazy"></div>
   </div>
 </section>
 
@@ -207,19 +280,23 @@
     <div>
       <h4>Shop</h4>
       <ul>
-        <li><a href="#store" data-shop-filter="fruit">Fruit Cakes</a></li>
-        <li><a href="#store" data-shop-filter="mini">Mini Pastries</a></li>
-        <li><a href="#store" data-shop-filter="tarts">Tarts</a></li>
-        <li><a href="#store" data-shop-filter="trees">Dessert Trees</a></li>
+        <li><a href="#store" data-shop-filter="mini">Mini Desserts</a></li>
+        <li><a href="#store" data-shop-filter="verrine">Verrines</a></li>
+        <li><a href="#store" data-shop-filter="towers">Towers</a></li>
+        <li><a href="#store" data-shop-filter="macarons">Macarons</a></li>
+        <li><a href="#store" data-shop-filter="pastries">Pastries</a></li>
       </ul>
     </div>
     <div>
       <h4>L.V Marie</h4>
       <ul>
-        <li><a href="events.html">Private Parties</a></li>
-        <li><a href="events.html#workshops">Cake School</a></li>
+        <li><a href="events.html#private-parties">Private Parties</a></li>
+        <li><a href="events.html#cake-101">Cake 101</a></li>
+        <li><a href="events.html#towers-101">Towers 101</a></li>
+        <li><a href="events.html#kids-parties">Kids Parties</a></li>
         <li><a href="events.html#corporate">Corporate</a></li>
-        <li><a href="events.html#custom">Custom Cakes</a></li>
+        <li><a href="#custom-cakes">Custom Cakes</a></li>
+        <li><a href="#flavours">Flavours</a></li>
       </ul>
     </div>
     <div>
@@ -269,7 +346,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/shop.js"></script>
+<script src="js/shop.js?v=15"></script>
 <script>
   const nav = document.getElementById('nav');
   const navLinks = document.getElementById('navLinks');
@@ -305,6 +382,12 @@
   document.getElementById('contactForm').addEventListener('submit', (e) => {
     e.preventDefault();
     showToast('Received');
+    e.target.reset();
+  });
+
+  document.getElementById('cakeForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    showToast('Request received');
     e.target.reset();
   });
 

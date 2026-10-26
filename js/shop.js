@@ -3,66 +3,148 @@
 const IMG = 'Assets/images/';
 
 const products = [
-  { id: 28, name: 'Signature Fruit Cake', category: 'fruit', price: 85, desc: 'Berries, piping, classic finish.', badge: 'Signature', image: IMG + 'fruit-cherry-clean.jpg' },
-  { id: 29, name: 'Berry Cascade Cake', category: 'fruit', price: 120, desc: 'Fresh berries, densely arranged.', image: IMG + 'fruit-strawberry-tower.jpg', fit: 'contain' },
-  { id: 30, name: 'Cherry Tower', category: 'fruit', price: 110, desc: 'Glazed cherries, vertical display.', image: IMG + 'fruit-cherry-product.jpg', fit: 'contain' },
-  { id: 31, name: 'Celebration Fruit Tower', category: 'fruit', price: 185, desc: 'Centrepiece fruit tower.', badge: 'Showstopper', image: IMG + 'chocolate-fruit.jpg' },
-  { id: 32, name: 'Garden Berry Cake', category: 'fruit', price: 95, desc: 'Berry-topped, scalloped piping.', image: IMG + 'berry-cake.jpg' },
+  /* ===== Mini Desserts ===== */
+  { id: 1, name: "S'mores Tart", category: 'mini', price: 2.5, desc: 'Vanilla tart shell layered with caramel, homemade marshmallow, milk chocolate mousse, topped with graham cracker.', image: IMG + 'smores-tart.jpg', options: [{ label: 'Size', type: 'single', choices: ['1"', '2"'] }] },
+  { id: 2, name: 'Mini Cheesecake Dome', category: 'mini', price: 2.5, desc: 'Short crust biscuit, vanilla bean cheesecake.', image: IMG + 'mini-cheesecake.jpg' },
+  { id: 3, name: 'Lemon Meringue Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, lemon curd, toasted meringue.', image: IMG + 'lemon-meringue-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
+  { id: 4, name: 'Mini Apple Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, roasted cinnamon apples, toasted crumble.', image: IMG + 'mini-apple-tart.jpg' },
+  { id: 5, name: 'Frutti di Bosco Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, mixed fresh berries.', image: IMG + 'frutti-di-bosco-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
+  { id: 6, name: 'Mini Cannoli', category: 'mini', price: 2.5, desc: 'Ricotta, Fior di Sicilia essence, traditional Sicilian cannoli shell.' },
+  { id: 7, name: 'Apple Almond Tart', category: 'mini', price: 4, desc: '2" vanilla tart shell, frangipane, pastry cream, roasted cinnamon apples, toasted crumble, golden almond.', image: IMG + 'apple-almond-tart.jpg' },
+  { id: 8, name: 'Pecan Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, maple, honey, toasted pecans.', image: IMG + 'pecan-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
+  { id: 9, name: 'Chocolate Crème Brûlée Tart', category: 'mini', price: 4, desc: '2" chocolate tart shell, vanilla crème brûlée, dark chocolate mousse.', image: IMG + 'chocolate-creme-brulee-tart.jpg' },
+  { id: 10, name: 'Salted Caramel Cream Puff', category: 'mini', price: 2.5, desc: 'Choux pastry, caramel, vanilla custard, Maldon sea salt flakes.', image: IMG + 'cream-puff.jpg' },
+  { id: 11, name: 'Mini Éclair', category: 'mini', price: 2.5, desc: 'Choux pastry, custard filling.', image: IMG + 'eclair.jpg', options: [{ label: 'Filling', type: 'single', choices: ['Vanilla', 'Chocolate', 'Hazelnut'] }, { label: 'Dip colour', type: 'text', optional: true }] },
+  { id: 12, name: 'Mini Bombe', category: 'mini', price: 2.5, desc: 'Nutella or vanilla custard filling.', options: [{ label: 'Filling', type: 'single', choices: ['Nutella', 'Vanilla Custard'] }] },
+  { id: 13, name: 'Cupcake', category: 'mini', price: 2.5, desc: 'Vanilla, chocolate, red velvet, or lemon.', image: IMG + 'cupcake-real.jpg', options: [{ label: 'Flavour', type: 'single', choices: ['Vanilla', 'Chocolate', 'Red Velvet', 'Lemon'] }, { label: 'Size', type: 'single', choices: [{ label: 'Mini', price: 2.5 }, { label: 'Regular', price: 5 }] }, { label: 'Buttercream colour', type: 'text', optional: true }], addon: { label: 'Add a flower', price: 1 } },
+  { id: 14, name: 'Madeleine Cookie', category: 'mini', price: 3, desc: 'French madeleine.', options: [{ label: 'White chocolate dip colour', type: 'text', optional: true }] },
 
-  { id: 1, name: 'Mini Cheesecake', category: 'mini', price: 2.5, desc: 'Classic cheesecake, bite-size.', image: IMG + 'dessert-spread.jpg' },
-  { id: 2, name: "Mini S'mores Tart", category: 'mini', price: 2.5, desc: 'Chocolate, graham, marshmallow.', image: IMG + 'chocolate-dessert.jpg' },
-  { id: 3, name: 'Mini Apple Tart', category: 'mini', price: 2.5, desc: 'Caramelized apple.', image: IMG + 'cake3.jpg' },
-  { id: 4, name: 'Mini Pecan Tart', category: 'mini', price: 2.5, desc: 'Maple pecan.', image: IMG + 'fruit-tart.jpg' },
-  { id: 5, name: 'Mini Lemon Meringue Tart', category: 'mini', price: 2.5, desc: 'Lemon curd, meringue.', image: IMG + 'tart-lemon.jpg' },
-  { id: 6, name: 'Mini Cannoli', category: 'mini', price: 2.5, desc: 'Ricotta cream.', image: IMG + 'cake2.jpg' },
-  { id: 7, name: 'Mini Éclairs', category: 'mini', price: 2.5, desc: 'Choux, vanilla, chocolate.', image: IMG + 'cake1.jpg' },
-  { id: 8, name: 'Mini Cupcake', category: 'mini', price: 2.5, desc: 'Seasonal, hand-piped.', image: IMG + 'cupcake-lux.jpg' },
-  { id: 9, name: 'Salted Caramel Cream Puff', category: 'mini', price: 2.5, desc: 'Choux, salted caramel cream.', image: IMG + 'cake2.jpg' },
-  { id: 10, name: 'Mini Bombe', category: 'mini', price: 2.5, desc: 'Chocolate sphere.', image: IMG + 'chocolate-dessert.jpg', options: { label: 'Filling', type: 'single', choices: ['Vanilla Custard', 'Nutella'] } },
-  { id: 11, name: 'Macarons', category: 'mini', price: 2.5, desc: 'French macarons.', badge: 'Popular', image: IMG + 'macaroons.png', fit: 'contain', options: { label: 'Flavours', type: 'multi', choices: ['Chocolate', 'Vanilla', 'Pistachio', 'Salted Caramel', 'Passionfruit', 'Raspberry', 'Hazelnut'] } },
+  /* ===== Verrines ===== */
+  { id: 15, name: 'Biscoff Verrine', category: 'verrine', price: 3, desc: 'Lotus cookie crumbs, vanilla cheesecake.', image: IMG + 'verrine-biscoff.jpg' },
+  { id: 16, name: 'Berry Verrine', category: 'verrine', price: 3, desc: 'Gluten free and dairy free.', badge: 'GF', image: IMG + 'verrine-berry.jpg' },
+  { id: 17, name: 'Ferrero Rocher Verrine', category: 'verrine', price: 3, desc: 'Nutella, dark chocolate mousse, chocolate cake, toasted hazelnut, dark chocolate crisp pearls.', image: IMG + 'verrine-ferrero-rocher.jpg' },
+  { id: 18, name: 'Strawberry Cheesecake Verrine', category: 'verrine', price: 3, desc: 'Graham crust, layered vanilla and strawberry cheesecake.', image: IMG + 'verrine-strawberry-cheesecake.jpg' },
+  { id: 19, name: 'Dulce de Leche Verrine', category: 'verrine', price: 3, desc: 'White chocolate mousse, dulce de leche, white chocolate crisp pearls.', image: IMG + 'verrine-dulce-de-leche.jpg' },
+  { id: 20, name: 'Bueno Verrine', category: 'verrine', price: 3, desc: 'Nutella, hazelnut mousse, milk chocolate mousse, Nutella Bueno.', image: IMG + 'verrine-bueno.jpg' },
+  { id: 21, name: 'Oreo Cheesecake Verrine', category: 'verrine', price: 3, desc: 'Oreo crumbs, vanilla cheesecake.', image: IMG + 'verrine-oreo.jpg' },
+  { id: 22, name: 'Tiramisu Verrine', category: 'verrine', price: 3, desc: 'Mascarpone, espresso, savoiardi, Baileys.', image: IMG + 'verrine-tiramisu.jpg' },
 
-  { id: 12, name: 'Chocolate Crème Brûlée Tart', category: 'tarts', price: 4, desc: 'Chocolate, caramelized sugar.', image: IMG + 'chocolate-fruit.jpg' },
-  { id: 13, name: 'Apple Almond Crumble Tart', category: 'tarts', price: 4, desc: 'Apple, frangipane, crumble.', image: IMG + 'fruit-tart.jpg' },
-  { id: 14, name: 'Lemon Meringue Tart', category: 'tarts', price: 4, desc: 'Lemon curd, Swiss meringue.', image: IMG + 'tart-lemon.jpg' },
-  { id: 15, name: "S'mores Tart", category: 'tarts', price: 4, desc: 'Chocolate, marshmallow.', image: IMG + 'chocolate-dessert.jpg' },
-  { id: 16, name: 'Pecan Tart', category: 'tarts', price: 4, desc: 'Pecan, maple caramel.', image: IMG + 'pastry-mini.jpg' },
+  /* ===== Towers ===== */
+  { id: 23, name: 'Macaron Tower', category: 'towers', price: 225, desc: '12" macaron tower.' },
+  { id: 24, name: 'Éclair Tower', category: 'towers', price: 225, desc: '12" éclair tower.' },
+  { id: 25, name: 'Madeleine Tower', category: 'towers', price: 225, desc: '12" madeleine tower.' },
+  { id: 26, name: 'Cream Puff Tower', category: 'towers', price: 225, desc: '12" cream puff tower.', image: IMG + 'tower-cream-puff.jpg', badge: 'Showstopper' },
+  { id: 27, name: 'Fruit Tower', category: 'towers', price: null, inquire: true, desc: 'Seasonal fruit tower — cherry, grape, strawberry, blueberry, blackberry, peach, or mandarin. Price varies per season.', image: IMG + 'tower-fruit-cherry.jpg', options: [{ label: 'Size', type: 'single', choices: ['12"', '15"', '20"', '26"'] }, { label: 'Fruit', type: 'single', choices: ['Cherry', 'Grape', 'Strawberry', 'Blueberry', 'Blackberry', 'Peach', 'Mandarin'] }] },
 
-  { id: 17, name: 'Tiramisu Cup', category: 'verrine', price: 3, desc: 'Espresso, mascarpone.', image: IMG + 'dessert-glass.jpg' },
-  { id: 18, name: 'Strawberry Cheesecake Cup', category: 'verrine', price: 3, desc: 'Strawberry, cheesecake.', image: IMG + 'dessert-spread.jpg' },
-  { id: 19, name: 'Dulce de Leche Cup', category: 'verrine', price: 3, desc: 'Caramel, white chocolate.', image: IMG + 'chocolate-dessert.jpg' },
-  { id: 20, name: 'Ferrero Rocher Cup', category: 'verrine', price: 3, desc: 'Hazelnut, chocolate.', image: IMG + 'layered-cake.jpg' },
-  { id: 21, name: 'Cookies & Cream Cup', category: 'verrine', price: 3, desc: 'Cookie, vanilla cream.', image: IMG + 'dessert-glass.jpg' },
-  { id: 22, name: 'Biscoff Cheesecake Cup', category: 'verrine', price: 3, desc: 'Cookie butter cheesecake.', image: IMG + 'pastry-mini.jpg' },
-  { id: 23, name: 'Bueno Mousse Cup', category: 'verrine', price: 3, desc: 'Caramel, hazelnut mousse.', image: IMG + 'chocolate-dessert.jpg' },
-  { id: 24, name: 'Turtles Cup', category: 'verrine', price: 3, desc: 'Caramel, pecan, chocolate.', image: IMG + 'dessert-spread.jpg' },
+  /* ===== Macarons ===== */
+  { id: 28, name: 'Macaron — Raspberry', category: 'macarons', price: 2.5, desc: 'French macaron, raspberry.', image: IMG + 'macaron-raspberry.jpg', badge: 'Popular' },
+  { id: 29, name: 'Macaron — Double Chocolate', category: 'macarons', price: 2.5, desc: 'French macaron, double chocolate.', image: IMG + 'macaron-chocolate.jpg' },
+  { id: 30, name: 'Macaron — Salted Caramel', category: 'macarons', price: 2.5, desc: 'French macaron, salted caramel.', image: IMG + 'macaron-salted-caramel.jpg' },
+  { id: 31, name: 'Macaron — Passion Fruit', category: 'macarons', price: 2.5, desc: 'French macaron, passion fruit.', image: IMG + 'macaron-passion-fruit.jpg' },
+  { id: 32, name: 'Macaron — Pistachio', category: 'macarons', price: 2.5, desc: 'French macaron, pistachio.', image: IMG + 'macaron-pistachio.jpg' },
+  { id: 33, name: 'Macaron — Hazelnut', category: 'macarons', price: 2.5, desc: 'French macaron, hazelnut.', image: IMG + 'macaron-hazelnut.jpg' },
+  { id: 34, name: 'Macaron — Vanilla Bean', category: 'macarons', price: 2.5, desc: 'French macaron, vanilla bean.', image: IMG + 'macaron-vanilla-bean.jpg' },
 
-  { id: 25, name: '65pc Macaron Tree', category: 'trees', price: 225, desc: '65 macarons.', badge: 'Bestseller', image: IMG + 'macaroons.png', fit: 'contain' },
-  { id: 26, name: '65pc Cream Puff Tree', category: 'trees', price: 200, desc: '65 cream puffs.', image: IMG + 'cake2.jpg' },
-  { id: 27, name: '90pc Macaron Tree', category: 'trees', price: 290, desc: '90 macarons, faces forward.', image: IMG + 'macarons-lux.jpg' },
+  /* ===== Pastries ===== */
+  { id: 35, name: 'Croissant', category: 'pastries', price: 3.5, desc: 'Butter croissant.', image: IMG + 'croissant.jpg' },
+  { id: 36, name: 'Filled Croissant', category: 'pastries', price: 4.5, desc: 'Vanilla custard or Nutella, icing sugar.', image: IMG + 'filled-croissant.jpg', options: [{ label: 'Filling', type: 'single', choices: ['Vanilla Custard', 'Nutella'] }] },
+  { id: 37, name: 'Almond Croissant', category: 'pastries', price: 5.5, desc: 'Frangipane, toasted almonds, icing sugar.', image: IMG + 'almond-croissant.jpg' },
+  { id: 38, name: 'Old Fashioned Donut', category: 'pastries', price: 5, desc: 'Old fashioned style donut.', image: IMG + 'donut.jpg', options: [{ label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls', 'Multicoloured sprinkles'] }] },
+  { id: 39, name: 'Cake Pop', category: 'pastries', price: 5, desc: 'Vanilla or chocolate.', image: IMG + 'cake-pop.jpg', options: [{ label: 'Flavour', type: 'single', choices: ['Vanilla', 'Chocolate'] }, { label: 'Ball', type: 'single', choices: ['Ball up', 'Ball down'] }, { label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls', 'Multicoloured sprinkles'] }], addon: { label: 'Add a flower', price: 1 } },
+  { id: 40, name: 'Rice Krispies Square', category: 'pastries', price: 4, desc: 'Homemade marshmallow, vanilla, Rice Krispies.', image: IMG + 'rice-krispies.jpg', options: [{ label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls'] }] },
+  { id: 41, name: 'Chocolate-Dipped Strawberries', category: 'pastries', price: 4, desc: 'Sold in sets of three.', image: IMG + 'dipped-strawberries.jpg', options: [{ label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls'] }] },
 ];
 
 const CATEGORY_LABELS = {
-  fruit: 'Fruit Cake',
-  mini: 'Mini Pastry',
-  tarts: 'Tart',
-  verrine: 'Verrine',
-  trees: 'Dessert Tree',
+  mini: 'Mini Desserts',
+  verrine: 'Verrines',
+  towers: 'Towers',
+  macarons: 'Macarons',
+  pastries: 'Pastries',
 };
 
 let cart = [];
-let currentFilter = 'fruit';
+let currentFilter = 'mini';
 let activeCustomizeId = null;
 let customizeQty = 1;
 let customizeChoices = [];
+let customizeAddon = false;
 let modalProductId = null;
 
 function money(n) {
   return '$' + n.toFixed(2);
 }
 
+function choiceLabel(c) {
+  return typeof c === 'string' ? c : c.label;
+}
+function choicePrice(c) {
+  return typeof c === 'string' ? null : c.price;
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function hasPricedOptions(p) {
+  return (p.options || []).some((opt) => (opt.choices || []).some((c) => choicePrice(c) != null));
+}
+
+function minPrice(p) {
+  let min = p.price;
+  (p.options || []).forEach((opt) => {
+    (opt.choices || []).forEach((c) => {
+      const cp = choicePrice(c);
+      if (cp != null && cp < min) min = cp;
+    });
+  });
+  return min;
+}
+
+function priceDisplay(p) {
+  if (p.inquire) return 'Inquire';
+  if (hasPricedOptions(p)) return 'from ' + money(minPrice(p));
+  return money(p.price);
+}
+
+function getUnitPrice(p, choices, addonOn) {
+  let price = p.price;
+  (p.options || []).forEach((opt, i) => {
+    const sel = choices[i];
+    if (!sel || !opt.choices) return;
+    const c = opt.choices.find((x) => choiceLabel(x) === sel);
+    const cp = c && choicePrice(c);
+    if (cp != null) price = cp;
+  });
+  if (addonOn && p.addon) price += p.addon.price;
+  return price;
+}
+
+function optionsLabel(p, choices, addonOn) {
+  const parts = [];
+  (p.options || []).forEach((opt, i) => {
+    const val = String(choices[i] || '').trim();
+    if (!val) return;
+    parts.push(opt.type === 'text' ? `${opt.label}: ${val}` : val);
+  });
+  if (addonOn && p.addon) parts.push(p.addon.label);
+  return parts.join(' · ');
+}
+
 function priceSuffix(p) {
-  if (p.category === 'trees' || p.category === 'fruit') return '';
+  if (p.category === 'towers' || p.inquire) return '';
   return ' <small>/each</small>';
+}
+
+function defaultChoices(p) {
+  return (p.options || []).map((opt) => {
+    if (opt.type === 'text' || opt.optional) return '';
+    return choiceLabel(opt.choices[0]);
+  });
 }
 
 function getProduct(id) {
@@ -85,59 +167,50 @@ function syncCustomizePanelUI() {
   const qtyEl = panel.querySelector('[data-qty-value]');
   const totalEl = panel.querySelector('.customize-total');
   if (qtyEl) qtyEl.textContent = String(customizeQty);
-  if (totalEl) totalEl.textContent = money(p.price * customizeQty);
+  if (totalEl && !p.inquire) totalEl.textContent = money(getUnitPrice(p, customizeChoices, customizeAddon) * customizeQty);
 }
 
-function renderProducts(filter) {
-  currentFilter = filter;
-  const grid = document.getElementById('productsGrid');
-  const filtered = products.filter((p) => p.category === filter);
-
-  document.querySelectorAll('.filter-btn').forEach((btn) => {
-    btn.classList.toggle('active', btn.dataset.filter === filter);
-  });
-
-  // Closing customize before wipe avoids orphan state after filter change
-  activeCustomizeId = null;
-
-  grid.innerHTML = filtered.map((p) => {
-    const fitClass = p.fit === 'contain' ? ' product-image--contain' : '';
+function renderOptionChips(p, groupIndex) {
+  const opt = p.options[groupIndex];
+  const note = opt.optional ? ' <span class="opt-note">Optional</span>' : '';
+  if (opt.type === 'text') {
+    const value = escapeHtml(customizeChoices[groupIndex] || '');
     return `
-      <article class="product-card fade-in visible" data-id="${p.id}" role="button" tabindex="0" aria-label="${p.name}">
-        <div class="product-image${fitClass}">
-          ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
-          <img src="${p.image}" alt="${p.name}" loading="lazy" width="600" height="600">
-        </div>
-        <div class="product-info">
-          <p class="product-category">${CATEGORY_LABELS[p.category]}</p>
-          <h3 class="product-name">${p.name}</h3>
-          <p class="product-desc">${p.desc}</p>
-          <div class="product-footer">
-            <span class="product-price">${money(p.price)}${priceSuffix(p)}</span>
-            <button type="button" class="add-btn" data-add="${p.id}">Add</button>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join('');
+    <div>
+      <span class="customize-label">${escapeHtml(opt.label)}${note}</span>
+      <input type="text" class="customize-input" data-text-group="${groupIndex}" value="${value}" autocomplete="off" maxlength="40">
+    </div>`;
+  }
+  return `
+    <div>
+      <span class="customize-label">${escapeHtml(opt.label)}${note}</span>
+      <div class="flavor-chips" role="group" aria-label="${escapeHtml(opt.label)}">
+        ${opt.choices.map((c) => {
+          const label = choiceLabel(c);
+          const selected = customizeChoices[groupIndex] === label;
+          return `<button type="button" class="flavor-chip${selected ? ' selected' : ''}" data-group="${groupIndex}" data-choice="${escapeHtml(label)}" aria-pressed="${selected}">${escapeHtml(label)}</button>`;
+        }).join('')}
+      </div>
+    </div>`;
+}
 
-  bindProductEvents();
+function renderAddonChip(p) {
+  if (!p.addon) return '';
+  return `
+    <div>
+      <span class="customize-label">Extras</span>
+      <div class="flavor-chips" role="group" aria-label="Extras">
+        <button type="button" class="flavor-chip${customizeAddon ? ' selected' : ''}" data-addon="1" aria-pressed="${customizeAddon}">${p.addon.label} +${money(p.addon.price).replace('.00', '')}</button>
+      </div>
+    </div>`;
 }
 
 function renderCustomizePanel(p) {
-  const chips = p.options
-    ? `
-      <div>
-        <span class="customize-label">${p.options.label}</span>
-        <div class="flavor-chips" role="group" aria-label="${p.options.label}">
-          ${p.options.choices.map((c) => {
-            const selected = customizeChoices.includes(c) ? ' selected' : '';
-            return `<button type="button" class="flavor-chip${selected}" data-choice="${c}" aria-pressed="${customizeChoices.includes(c)}">${c}</button>`;
-          }).join('')}
-        </div>
-      </div>
-    `
-    : '';
+  const chips = (p.options || []).map((_, i) => renderOptionChips(p, i)).join('');
+  const addon = renderAddonChip(p);
+  const foot = p.inquire
+    ? `<div class="customize-foot"><button type="button" class="customize-add" data-confirm-add="${p.id}">Inquire</button></div>`
+    : `<div class="customize-foot"><span class="customize-total">${money(getUnitPrice(p, customizeChoices, customizeAddon) * customizeQty)}</span><button type="button" class="customize-add" data-confirm-add="${p.id}">Add</button></div>`;
 
   return `
     <div class="customize-panel" data-panel="${p.id}">
@@ -145,6 +218,7 @@ function renderCustomizePanel(p) {
         <h3 class="product-name">${p.name}</h3>
         <button type="button" class="customize-close" data-close-panel aria-label="Close"><span aria-hidden="true">×</span></button>
       </div>
+      ${p.inquire ? '' : `
       <div>
         <span class="customize-label">Quantity</span>
         <div class="customize-qty">
@@ -152,18 +226,16 @@ function renderCustomizePanel(p) {
           <span data-qty-value>${customizeQty}</span>
           <button type="button" data-qty-delta="1" aria-label="Increase">+</button>
         </div>
-      </div>
+      </div>`}
       ${chips}
-      <div class="customize-foot">
-        <span class="customize-total">${money(p.price * customizeQty)}</span>
-        <button type="button" class="customize-add" data-confirm-add="${p.id}">Add</button>
-      </div>
-    </div>
-  `;
+      ${addon}
+      ${foot}
+    </div>`;
 }
 
 function bindCustomizePanel(panel) {
   if (!panel) return;
+  const p = getProduct(Number(panel.dataset.panel));
 
   panel.addEventListener('click', (e) => e.stopPropagation());
 
@@ -180,25 +252,37 @@ function bindCustomizePanel(panel) {
     });
   });
 
-  panel.querySelectorAll('.flavor-chip').forEach((chip) => {
+  panel.querySelectorAll('.flavor-chip[data-group]').forEach((chip) => {
     chip.addEventListener('click', (e) => {
       e.stopPropagation();
-      const p = getProduct(activeCustomizeId);
-      if (!p?.options) return;
-      const value = chip.dataset.choice;
-      if (p.options.type === 'single') {
-        customizeChoices = [value];
-        panel.querySelectorAll('.flavor-chip').forEach((c) => {
-          const on = c.dataset.choice === value;
-          c.classList.toggle('selected', on);
-          c.setAttribute('aria-pressed', String(on));
-        });
-      } else {
-        const on = !chip.classList.contains('selected');
-        chip.classList.toggle('selected', on);
-        chip.setAttribute('aria-pressed', String(on));
-        customizeChoices = [...panel.querySelectorAll('.flavor-chip.selected')].map((c) => c.dataset.choice);
-      }
+      const group = Number(chip.dataset.group);
+      const opt = p.options[group];
+      const choice = chip.dataset.choice;
+      const next = opt.optional && customizeChoices[group] === choice ? '' : choice;
+      customizeChoices[group] = next;
+      panel.querySelectorAll(`.flavor-chip[data-group="${group}"]`).forEach((c) => {
+        const on = next !== '' && c.dataset.choice === next;
+        c.classList.toggle('selected', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
+      syncCustomizePanelUI();
+    });
+  });
+
+  panel.querySelectorAll('[data-text-group]').forEach((input) => {
+    input.addEventListener('click', (e) => e.stopPropagation());
+    input.addEventListener('keydown', (e) => e.stopPropagation());
+    input.addEventListener('input', () => {
+      customizeChoices[Number(input.dataset.textGroup)] = input.value;
+    });
+  });
+
+  panel.querySelectorAll('.flavor-chip[data-addon]').forEach((chip) => {
+    chip.addEventListener('click', (e) => {
+      e.stopPropagation();
+      customizeAddon = !chip.classList.contains('selected');
+      chip.classList.toggle('selected', customizeAddon);
+      chip.setAttribute('aria-pressed', String(customizeAddon));
       syncCustomizePanelUI();
     });
   });
@@ -214,7 +298,7 @@ function bindProductEvents() {
     const id = Number(card.dataset.id);
 
     card.addEventListener('click', (e) => {
-      if (e.target.closest('[data-add], .customize-panel, button')) return;
+      if (e.target.closest('.add-btn, .customize-panel, button')) return;
       openProductModal(id);
     });
 
@@ -246,7 +330,8 @@ function openCustomize(id) {
 
   activeCustomizeId = id;
   customizeQty = 1;
-  customizeChoices = p.options?.type === 'single' ? [p.options.choices[0]] : [];
+  customizeChoices = defaultChoices(p);
+  customizeAddon = false;
 
   card.classList.add('is-customizing');
   const info = card.querySelector('.product-info');
@@ -268,17 +353,17 @@ function confirmAdd(id) {
   const p = getProduct(id);
   if (!p) return false;
 
-  if (p.options?.type === 'multi' && customizeChoices.length === 0) {
-    showToast('Select a flavour');
-    return false;
-  }
-  if (p.options?.type === 'single' && customizeChoices.length === 0) {
-    showToast('Select a filling');
-    return false;
+  if (p.inquire) {
+    closeCustomize();
+    closeProductModal();
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
   }
 
-  const optionsKey = customizeChoices.slice().sort().join('|');
-  const existing = cart.find((c) => c.id === id && (c.optionsKey || '') === optionsKey);
+  const unit = getUnitPrice(p, customizeChoices, customizeAddon);
+  const label = optionsLabel(p, customizeChoices, customizeAddon);
+  const key = label;
+  const existing = cart.find((c) => c.id === id && (c.optionsKey || '') === key);
 
   if (existing) {
     existing.qty += customizeQty;
@@ -286,11 +371,11 @@ function confirmAdd(id) {
     cart.push({
       id: p.id,
       name: p.name,
-      price: p.price,
+      price: unit,
       image: p.image,
       qty: customizeQty,
-      optionsLabel: customizeChoices.join(', '),
-      optionsKey,
+      optionsLabel: label,
+      optionsKey: key,
     });
   }
 
@@ -322,7 +407,7 @@ function updateCartUI() {
 
   itemsEl.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
-      <div class="cart-item-image"><img src="${item.image}" alt=""></div>
+      <div class="cart-item-image${item.image ? '' : ' cart-item-image--blank'}">${item.image ? `<img src="${item.image}" alt="">` : ''}</div>
       <div class="cart-item-details">
         <p class="cart-item-name">${item.name}</p>
         ${item.optionsLabel ? `<p class="cart-item-meta">${item.optionsLabel}</p>` : ''}
@@ -373,44 +458,50 @@ function openProductModal(id) {
   closeCustomize();
   modalProductId = id;
   customizeQty = 1;
-  customizeChoices = p.options?.type === 'single' ? [p.options.choices[0]] : [];
+  customizeChoices = defaultChoices(p);
+  customizeAddon = false;
 
   const overlay = document.getElementById('modalOverlay');
   const modal = document.getElementById('productModal');
-  const fitClass = p.fit === 'contain' ? ' modal-image--contain' : '';
+  const price = p.inquire ? 'Price varies per season' : priceDisplay(p) + priceSuffix(p);
+  const chips = (p.options || []).map((_, i) => renderOptionChips(p, i)).join('');
+  const imageHtml = p.image
+    ? `<div class="modal-image"><img src="${p.image}" alt="${escapeHtml(p.name)}"></div>`
+    : '';
+  modal.classList.toggle('product-modal--text', !p.image);
+
+  const addon = p.addon ? `
+    <div>
+      <span class="customize-label">Extras</span>
+      <div class="flavor-chips" role="group" aria-label="Extras">
+        <button type="button" class="flavor-chip" id="modalAddon" data-addon="1" aria-pressed="false">${p.addon.label} +${money(p.addon.price).replace('.00', '')}</button>
+      </div>
+    </div>` : '';
+
+  const foot = p.inquire
+    ? `<div class="customize-foot"><button type="button" class="customize-add" id="modalAdd">Inquire</button></div>`
+    : `<div class="customize-foot"><span class="customize-total" id="modalTotal">${money(getUnitPrice(p, customizeChoices, customizeAddon))}</span><button type="button" class="customize-add" id="modalAdd">Add</button></div>`;
 
   modal.innerHTML = `
     <button type="button" class="modal-close" id="modalClose" aria-label="Close"><span aria-hidden="true">×</span></button>
-    <div class="modal-image${fitClass}"><img src="${p.image}" alt="${p.name}"></div>
+    ${imageHtml}
     <div class="modal-body">
       <p class="modal-category">${CATEGORY_LABELS[p.category]}</p>
       <h3>${p.name}</h3>
       <p class="modal-desc">${p.desc}</p>
-      <p class="modal-price">${money(p.price)}${priceSuffix(p)}</p>
+      <p class="modal-price">${price}</p>
       <div class="modal-actions">
         <div class="customize-panel">
+          ${p.inquire ? '' : `
           <span class="customize-label">Quantity</span>
           <div class="customize-qty">
             <button type="button" id="modalQtyMinus" aria-label="Decrease">−</button>
             <span id="modalQtyVal">1</span>
             <button type="button" id="modalQtyPlus" aria-label="Increase">+</button>
-          </div>
-          ${p.options ? `
-            <div>
-              <span class="customize-label">${p.options.label}</span>
-              <div class="flavor-chips" id="modalFlavors" role="group" aria-label="${p.options.label}">
-                ${p.options.choices.map((c, i) => {
-                  const selected = p.options.type === 'single' && i === 0 ? ' selected' : '';
-                  const pressed = selected ? 'true' : 'false';
-                  return `<button type="button" class="flavor-chip${selected}" data-choice="${c}" aria-pressed="${pressed}">${c}</button>`;
-                }).join('')}
-              </div>
-            </div>
-          ` : ''}
-          <div class="customize-foot">
-            <span class="customize-total" id="modalTotal">${money(p.price)}</span>
-            <button type="button" class="customize-add" id="modalAdd">Add</button>
-          </div>
+          </div>`}
+          ${chips}
+          ${addon}
+          ${foot}
         </div>
       </div>
     </div>
@@ -420,40 +511,53 @@ function openProductModal(id) {
   document.body.style.overflow = 'hidden';
 
   const syncModal = () => {
-    document.getElementById('modalQtyVal').textContent = String(customizeQty);
-    document.getElementById('modalTotal').textContent = money(p.price * customizeQty);
-    if (p.options) {
-      customizeChoices = [...document.querySelectorAll('#modalFlavors .flavor-chip.selected')].map((c) => c.dataset.choice);
+    if (!p.inquire) {
+      document.getElementById('modalQtyVal').textContent = String(customizeQty);
+      document.getElementById('modalTotal').textContent = money(getUnitPrice(p, customizeChoices, customizeAddon) * customizeQty);
     }
   };
 
   document.getElementById('modalClose').addEventListener('click', closeProductModal);
-  document.getElementById('modalQtyMinus').addEventListener('click', () => {
+  document.getElementById('modalQtyMinus')?.addEventListener('click', () => {
     customizeQty = Math.max(1, customizeQty - 1);
     syncModal();
   });
-  document.getElementById('modalQtyPlus').addEventListener('click', () => {
+  document.getElementById('modalQtyPlus')?.addEventListener('click', () => {
     customizeQty += 1;
     syncModal();
   });
-  document.querySelectorAll('#modalFlavors .flavor-chip').forEach((chip) => {
+  modal.querySelectorAll('.flavor-chip[data-group]').forEach((chip) => {
     chip.addEventListener('click', () => {
-      if (p.options.type === 'single') {
-        document.querySelectorAll('#modalFlavors .flavor-chip').forEach((c) => {
-          const on = c === chip;
-          c.classList.toggle('selected', on);
-          c.setAttribute('aria-pressed', String(on));
-        });
-      } else {
-        const on = !chip.classList.contains('selected');
-        chip.classList.toggle('selected', on);
-        chip.setAttribute('aria-pressed', String(on));
-      }
+      const group = Number(chip.dataset.group);
+      const opt = p.options[group];
+      const choice = chip.dataset.choice;
+      const next = opt.optional && customizeChoices[group] === choice ? '' : choice;
+      customizeChoices[group] = next;
+      modal.querySelectorAll(`.flavor-chip[data-group="${group}"]`).forEach((c) => {
+        const on = next !== '' && c.dataset.choice === next;
+        c.classList.toggle('selected', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
       syncModal();
     });
   });
-  document.getElementById('modalAdd').addEventListener('click', () => {
+  modal.querySelectorAll('[data-text-group]').forEach((input) => {
+    input.addEventListener('input', () => {
+      customizeChoices[Number(input.dataset.textGroup)] = input.value;
+    });
+  });
+  document.getElementById('modalAddon')?.addEventListener('click', (e) => {
+    customizeAddon = !e.currentTarget.classList.contains('selected');
+    e.currentTarget.classList.toggle('selected', customizeAddon);
+    e.currentTarget.setAttribute('aria-pressed', String(customizeAddon));
     syncModal();
+  });
+  document.getElementById('modalAdd').addEventListener('click', () => {
+    if (p.inquire) {
+      closeProductModal();
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
     if (confirmAdd(id)) closeProductModal();
   });
 }
@@ -479,6 +583,45 @@ function filterProducts(category) {
   renderProducts(category);
 }
 
+function renderProducts(filter) {
+  currentFilter = filter;
+  const grid = document.getElementById('productsGrid');
+  const filtered = products.filter((p) => p.category === filter);
+
+  document.querySelectorAll('.filter-btn').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.filter === filter);
+  });
+
+  activeCustomizeId = null;
+
+  grid.innerHTML = filtered.map((p) => {
+    const btn = p.inquire
+      ? `<a href="#contact" class="add-btn">Inquire</a>`
+      : `<button type="button" class="add-btn" data-add="${p.id}">Add</button>`;
+    const imageHtml = `
+        <div class="product-image${p.image ? '' : ' product-image--blank'}">
+          ${p.badge ? `<span class="product-badge">${escapeHtml(p.badge)}</span>` : ''}
+          ${p.image ? `<img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" width="600" height="600">` : ''}
+        </div>`;
+    return `
+      <article class="product-card fade-in visible" data-id="${p.id}" role="button" tabindex="0" aria-label="${escapeHtml(p.name)}">
+        ${imageHtml}
+        <div class="product-info">
+          <p class="product-category">${CATEGORY_LABELS[p.category]}</p>
+          <h3 class="product-name">${p.name}</h3>
+          <p class="product-desc">${p.desc}</p>
+          <div class="product-footer">
+            <span class="product-price">${priceDisplay(p)}${priceSuffix(p)}</span>
+            ${btn}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  bindProductEvents();
+}
+
 function initShop() {
   document.querySelectorAll('.filter-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -498,6 +641,7 @@ function initShop() {
   document.getElementById('cartOverlay').addEventListener('click', (e) => {
     if (e.target.id === 'cartOverlay') closeCart();
   });
+
   document.getElementById('submitOrder').addEventListener('click', submitOrder);
 
   document.getElementById('modalOverlay').addEventListener('click', (e) => {
@@ -512,7 +656,7 @@ function initShop() {
     }
   });
 
-  renderProducts('fruit');
+  renderProducts('mini');
   updateCartUI();
 }
 
