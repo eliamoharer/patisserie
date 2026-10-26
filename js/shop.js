@@ -4,13 +4,13 @@ const IMG = 'Assets/images/';
 
 const products = [
   /* ===== Mini Desserts ===== */
-  { id: 1, name: "S'mores Tart", category: 'mini', price: 2.5, desc: 'Vanilla tart shell layered with caramel, homemade marshmallow, milk chocolate mousse, topped with graham cracker.', image: IMG + 'smores-tart.jpg', options: [{ label: 'Size', type: 'single', choices: ['1"', '2"'] }] },
+  { id: 1, name: "S'mores Tart", category: 'mini', price: 2.5, desc: 'Vanilla tart shell layered with caramel, homemade marshmallow, milk chocolate mousse, topped with graham cracker.', image: IMG + 'smores-tart.jpg?v=2', options: [{ label: 'Size', type: 'single', choices: ['1"', '2"'] }] },
   { id: 2, name: 'Mini Cheesecake Dome', category: 'mini', price: 2.5, desc: 'Short crust biscuit, vanilla bean cheesecake.', image: IMG + 'mini-cheesecake.jpg' },
   { id: 3, name: 'Lemon Meringue Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, lemon curd, toasted meringue.', image: IMG + 'lemon-meringue-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
-  { id: 4, name: 'Mini Apple Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, roasted cinnamon apples, toasted crumble.', image: IMG + 'mini-apple-tart.jpg' },
+  { id: 4, name: 'Mini Apple Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, roasted cinnamon apples, toasted crumble.', image: IMG + 'mini-apple-tart.jpg?v=2' },
   { id: 5, name: 'Frutti di Bosco Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, mixed fresh berries.', image: IMG + 'frutti-di-bosco-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
   { id: 6, name: 'Mini Cannoli', category: 'mini', price: 2.5, desc: 'Ricotta, Fior di Sicilia essence, traditional Sicilian cannoli shell.' },
-  { id: 7, name: 'Apple Almond Tart', category: 'mini', price: 4, desc: '2" vanilla tart shell, frangipane, pastry cream, roasted cinnamon apples, toasted crumble, golden almond.', image: IMG + 'apple-almond-tart.jpg' },
+  { id: 7, name: 'Apple Almond Tart', category: 'mini', price: 4, desc: '2" vanilla tart shell, frangipane, pastry cream, roasted cinnamon apples, toasted crumble, golden almond.', image: IMG + 'apple-almond-tart.jpg?v=2' },
   { id: 8, name: 'Pecan Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, maple, honey, toasted pecans.', image: IMG + 'pecan-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
   { id: 9, name: 'Chocolate Crème Brûlée Tart', category: 'mini', price: 4, desc: '2" chocolate tart shell, vanilla crème brûlée, dark chocolate mousse.', image: IMG + 'chocolate-creme-brulee-tart.jpg' },
   { id: 10, name: 'Salted Caramel Cream Puff', category: 'mini', price: 2.5, desc: 'Choux pastry, caramel, vanilla custard, Maldon sea salt flakes.', image: IMG + 'cream-puff.jpg' },
@@ -578,9 +578,20 @@ function submitOrder() {
   showToast('Inquiry sent');
 }
 
+function scrollShopToTopIfNeeded() {
+  if (!window.matchMedia('(max-width: 860px)').matches) return;
+  const store = document.getElementById('store');
+  if (!store) return;
+  const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 0;
+  if (store.getBoundingClientRect().top < navH - 8) {
+    store.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 function filterProducts(category) {
   closeCustomize();
   renderProducts(category);
+  scrollShopToTopIfNeeded();
 }
 
 function renderProducts(filter) {
