@@ -369,12 +369,12 @@ h1, h2, h3, h4 {
 .hero--boutique {
   /* The brand blue is the page itself — the logo artwork carries no disc,
      so there is no raster edge to show against this fill.
-     Height extends by the bottom safe-area inset so the home-indicator /
-     browser-toolbar strip is painted blue instead of showing the cream
-     document canvas underneath. */
-  height: calc(100svh + env(safe-area-inset-bottom, 0px));
-  min-height: calc(100svh + env(safe-area-inset-bottom, 0px));
-  max-height: calc(100svh + env(safe-area-inset-bottom, 0px));
+     `lvh` is the largest viewport height. `svh` (smallest) is what caused
+     the gap: when mobile toolbars retract the visible area grows past it,
+     leaving the canvas showing underneath. If `lvh` is unsupported these
+     declarations drop and the base `.hero` 100dvh chain applies. */
+  height: 100lvh;
+  min-height: 100lvh;
   padding:
     calc(var(--nav-h) + env(safe-area-inset-top, 0px))
     1.25rem
@@ -693,13 +693,6 @@ h1, h2, h3, h4 {
   flex-direction: column;
   flex: 1;
   gap: 0.25rem;
-}
-.product-category {
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
 }
 .product-name {
   font-family: 'GothamBold', 'GothamBook', sans-serif;

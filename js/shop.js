@@ -633,7 +633,6 @@ function renderProducts(filter) {
       <article class="product-card fade-in visible" data-id="${p.id}" role="button" tabindex="0" aria-label="${escapeHtml(p.name)}">
         ${imageHtml}
         <div class="product-info">
-          <p class="product-category">${CATEGORY_LABELS[p.category]}</p>
           <h3 class="product-name">${p.name}</h3>
           <p class="product-desc">${p.desc}</p>
           <div class="product-footer">
