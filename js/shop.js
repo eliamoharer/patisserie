@@ -36,7 +36,7 @@ const products = [
   { id: 22, name: 'Tiramisu Verrine', category: 'verrine', price: 3, desc: 'Mascarpone, espresso, savoiardi, Baileys.', image: IMG + 'verrine-tiramisu.jpg' },
 
   /* ===== Towers ===== */
-  { id: 23, name: 'Macaron Tower', category: 'towers', price: 225, desc: '12" macaron tower. Larger sizes available on request.', image: IMG + 'tower-macaron.jpg', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
+  { id: 23, name: 'Macaron Tower', category: 'towers', price: 225, desc: '12" macaron tower. Larger sizes available on request.', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
   { id: 24, name: 'Éclair Tower', category: 'towers', price: 225, desc: '12" éclair tower. Larger sizes available on request.', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
   { id: 25, name: 'Madeleine Tower', category: 'towers', price: 225, desc: '12" madeleine tower. Larger sizes available on request.', image: IMG + 'tower-madeleine.jpg', badge: 'Showstopper', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
   { id: 26, name: 'Cream Puff Tower', category: 'towers', price: 225, desc: '12" cream puff tower. Larger sizes available on request.', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },

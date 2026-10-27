@@ -368,11 +368,17 @@ h1, h2, h3, h4 {
 }
 .hero--boutique {
   /* The brand blue is the page itself — the logo artwork carries no disc,
-     so there is no raster edge to show against this fill. */
-  height: 100svh;
-  min-height: 100svh;
-  max-height: 100svh;
-  padding: calc(var(--nav-h) + env(safe-area-inset-top, 0px)) 1.25rem 1.5rem;
+     so there is no raster edge to show against this fill.
+     Height extends by the bottom safe-area inset so the home-indicator /
+     browser-toolbar strip is painted blue instead of showing the cream
+     document canvas underneath. */
+  height: calc(100svh + env(safe-area-inset-bottom, 0px));
+  min-height: calc(100svh + env(safe-area-inset-bottom, 0px));
+  max-height: calc(100svh + env(safe-area-inset-bottom, 0px));
+  padding:
+    calc(var(--nav-h) + env(safe-area-inset-top, 0px))
+    1.25rem
+    calc(1.5rem + env(safe-area-inset-bottom, 0px));
   background: var(--brand);
 }
 .hero--boutique .hero-content {
@@ -468,6 +474,8 @@ h1, h2, h3, h4 {
 .page-shop .nav-cart { color: rgba(255, 255, 255, 0.85); }
 .page-shop .nav-cart:hover { color: #fff; }
 .page-shop .nav-toggle span { background: #fff; }
+/* Once past the hero, the toggle must match the cart icon beside it */
+.page-shop .nav.nav--on-page .nav-toggle span { background: var(--warm-grey); }
 
 /* Past the hero — neutral, cohesive with the rest of the site.
    Border/shadow are warm-grey, not brand blue, so no cool tint bleeds
@@ -1642,18 +1650,34 @@ h1, h2, h3, h4 {
   .product-modal {
     grid-template-columns: 1fr;
     max-height: min(92vh, 92dvh);
-    overflow: auto;
+    /* The modal FRAME must not scroll — only .modal-body does.
+       Otherwise the absolutely-positioned X scrolls out of view. */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
+  /* Photo is capped so the scrolling body keeps usable height */
   .modal-image {
     height: auto;
-    max-height: none;
-    aspect-ratio: 1;
+    max-height: 38vh;
+    aspect-ratio: 4 / 3;
     width: 100%;
+    flex: 0 0 auto;
   }
   .modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
     max-height: none;
-    overflow: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 1.5rem 1.35rem 1.75rem;
+  }
+  .modal-close {
+    top: 0.6rem;
+    right: 0.6rem;
+    z-index: 5;
+    box-shadow: 0 2px 10px rgba(44, 40, 37, 0.18);
   }
   .flavours-grid { grid-template-columns: 1fr; }
   .flavours-grid--pair {
@@ -1668,6 +1692,11 @@ h1, h2, h3, h4 {
   }
   .flavour-column + .flavour-column .flavour-subhead { margin-top: 1.4rem; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  /* "/each" is noise on a phone and squeezes the price column */
+  .product-price small,
+  .modal-price small {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1686,7 +1715,7 @@ h1, h2, h3, h4 {
     padding:
       calc(var(--nav-h) + env(safe-area-inset-top, 0px))
       1rem
-      0;
+      env(safe-area-inset-bottom, 0px);
   }
   .hero--boutique .hero-content {
     padding: 0.75rem;
@@ -1726,8 +1755,12 @@ h1, h2, h3, h4 {
     aspect-ratio: 1;
     border-radius: 0;
   }
+  /* Gallery runs edge-to-edge into the footer — no cream strip between */
   .gallery--bleed {
-    padding-bottom: 2.5rem;
+    padding-bottom: 0;
+  }
+  .gallery--bleed .gallery-grid {
+    margin-bottom: 0;
   }
   .footer {
     margin-top: 0;
