@@ -3,21 +3,27 @@
 const IMG = 'Assets/images/';
 
 const products = [
-  /* ===== Mini Desserts ===== */
-  { id: 1, name: "S'mores Tart", category: 'mini', price: 2.5, desc: 'Vanilla tart shell layered with caramel, homemade marshmallow, milk chocolate mousse, topped with graham cracker.', image: IMG + 'smores-tart.jpg?v=2', options: [{ label: 'Size', type: 'single', choices: ['1"', '2"'] }] },
+  /* ===== Mini Desserts — $2.50, no size choice ===== */
   { id: 2, name: 'Mini Cheesecake Dome', category: 'mini', price: 2.5, desc: 'Short crust biscuit, vanilla bean cheesecake.', image: IMG + 'mini-cheesecake.jpg' },
-  { id: 3, name: 'Lemon Meringue Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, lemon curd, toasted meringue.', image: IMG + 'lemon-meringue-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
-  { id: 4, name: 'Mini Apple Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, roasted cinnamon apples, toasted crumble.', image: IMG + 'mini-apple-tart.jpg?v=2' },
-  { id: 5, name: 'Frutti di Bosco Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, mixed fresh berries.', image: IMG + 'frutti-di-bosco-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
-  { id: 6, name: 'Mini Cannoli', category: 'mini', price: 2.5, desc: 'Ricotta, Fior di Sicilia essence, traditional Sicilian cannoli shell.' },
-  { id: 7, name: 'Apple Almond Tart', category: 'mini', price: 4, desc: '2" vanilla tart shell, frangipane, pastry cream, roasted cinnamon apples, toasted crumble, golden almond.', image: IMG + 'apple-almond-tart.jpg?v=2' },
-  { id: 8, name: 'Pecan Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, maple, honey, toasted pecans.', image: IMG + 'pecan-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
-  { id: 9, name: 'Chocolate Crème Brûlée Tart', category: 'mini', price: 4, desc: '2" chocolate tart shell, vanilla crème brûlée, dark chocolate mousse.', image: IMG + 'chocolate-creme-brulee-tart.jpg' },
+  { id: 4, name: 'Mini Apple Tart', category: 'mini', price: 2.5, desc: 'Vanilla tart shell, pastry cream, roasted cinnamon apples, toasted crumble.', image: IMG + 'mini-apple-tart.jpg?v=3', photoNote: '1" size' },
+  { id: 6, name: 'Mini Cannoli', category: 'mini', price: 2.5, desc: 'Ricotta, Fior di Sicilia essence, traditional Sicilian cannoli shell.', image: IMG + 'mini-cannoli.jpg' },
   { id: 10, name: 'Salted Caramel Cream Puff', category: 'mini', price: 2.5, desc: 'Choux pastry, caramel, vanilla custard, Maldon sea salt flakes.', image: IMG + 'cream-puff.jpg' },
   { id: 11, name: 'Mini Éclair', category: 'mini', price: 2.5, desc: 'Choux pastry, custard filling.', image: IMG + 'eclair.jpg', options: [{ label: 'Filling', type: 'single', choices: ['Vanilla', 'Chocolate', 'Hazelnut'] }, { label: 'Dip colour', type: 'text', optional: true }] },
-  { id: 12, name: 'Mini Bombe', category: 'mini', price: 2.5, desc: 'Nutella or vanilla custard filling.', options: [{ label: 'Filling', type: 'single', choices: ['Nutella', 'Vanilla Custard'] }] },
+  { id: 12, name: 'Mini Bombe', category: 'mini', price: 2.5, desc: 'Nutella or vanilla custard filling.', image: IMG + 'mini-bombe.jpg', options: [{ label: 'Filling', type: 'single', choices: ['Nutella', 'Vanilla Custard'] }] },
   { id: 13, name: 'Cupcake', category: 'mini', price: 2.5, desc: 'Vanilla, chocolate, red velvet, or lemon.', image: IMG + 'cupcake-real.jpg', options: [{ label: 'Flavour', type: 'single', choices: ['Vanilla', 'Chocolate', 'Red Velvet', 'Lemon'] }, { label: 'Size', type: 'single', choices: [{ label: 'Mini', price: 2.5 }, { label: 'Regular', price: 5 }] }, { label: 'Buttercream colour', type: 'text', optional: true }], addon: { label: 'Add a flower', price: 1 } },
-  { id: 14, name: 'Madeleine Cookie', category: 'mini', price: 3, desc: 'French madeleine.', options: [{ label: 'White chocolate dip colour', type: 'text', optional: true }] },
+
+  /* ===== 1" or 2" choice — grouped together ===== */
+  { id: 1, name: "S'mores Tart", category: 'mini', price: 2.5, dsizes: true, desc: 'Vanilla tart shell layered with caramel, homemade marshmallow, milk chocolate mousse, topped with graham cracker.', image: IMG + 'smores-tart.jpg?v=3', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
+  { id: 3, name: 'Lemon Meringue Tart', category: 'mini', price: 2.5, dsizes: true, desc: 'Vanilla tart shell, lemon curd, toasted meringue.', image: IMG + 'lemon-meringue-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
+  { id: 5, name: 'Frutti di Bosco Tart', category: 'mini', price: 2.5, dsizes: true, desc: 'Vanilla tart shell, pastry cream, mixed fresh berries.', image: IMG + 'frutti-di-bosco-tart.jpg', options: [{ label: 'Size', type: 'single', choices: [{ label: '1"', price: 2.5 }, { label: '2"', price: 4 }] }] },
+
+  /* ===== Mini Desserts — $3.00 ===== */
+  { id: 14, name: 'Madeleine Cookie', category: 'mini', price: 3, desc: 'French madeleine.', image: IMG + 'madeleine.jpg', options: [{ label: 'White chocolate dip colour', type: 'text', optional: true }] },
+
+  /* ===== Mini Desserts — $4.00, listed last ===== */
+  { id: 7, name: 'Apple Almond Tart', category: 'mini', price: 4, desc: '2" vanilla tart shell, frangipane, pastry cream, roasted cinnamon apples, toasted crumble, golden almond.', image: IMG + 'apple-almond-tart.jpg?v=3' },
+  { id: 8, name: 'Pecan Tart', category: 'mini', price: 4, desc: '2" vanilla tart shell, maple, honey, toasted pecans.', image: IMG + 'pecan-tart.jpg' },
+  { id: 9, name: 'Chocolate Crème Brûlée Tart', category: 'mini', price: 4, desc: '2" chocolate tart shell, vanilla crème brûlée, dark chocolate mousse.', image: IMG + 'chocolate-creme-brulee-tart.jpg' },
 
   /* ===== Verrines ===== */
   { id: 15, name: 'Biscoff Verrine', category: 'verrine', price: 3, desc: 'Lotus cookie crumbs, vanilla cheesecake.', image: IMG + 'verrine-biscoff.jpg' },
@@ -30,11 +36,11 @@ const products = [
   { id: 22, name: 'Tiramisu Verrine', category: 'verrine', price: 3, desc: 'Mascarpone, espresso, savoiardi, Baileys.', image: IMG + 'verrine-tiramisu.jpg' },
 
   /* ===== Towers ===== */
-  { id: 23, name: 'Macaron Tower', category: 'towers', price: 225, desc: '12" macaron tower.' },
-  { id: 24, name: 'Éclair Tower', category: 'towers', price: 225, desc: '12" éclair tower.' },
-  { id: 25, name: 'Madeleine Tower', category: 'towers', price: 225, desc: '12" madeleine tower.' },
-  { id: 26, name: 'Cream Puff Tower', category: 'towers', price: 225, desc: '12" cream puff tower.', image: IMG + 'tower-cream-puff.jpg', badge: 'Showstopper' },
-  { id: 27, name: 'Fruit Tower', category: 'towers', price: null, inquire: true, desc: 'Seasonal fruit tower — cherry, grape, strawberry, blueberry, blackberry, peach, or mandarin. Price varies per season.', image: IMG + 'tower-fruit-cherry.jpg', options: [{ label: 'Size', type: 'single', choices: ['12"', '15"', '20"', '26"'] }, { label: 'Fruit', type: 'single', choices: ['Cherry', 'Grape', 'Strawberry', 'Blueberry', 'Blackberry', 'Peach', 'Mandarin'] }] },
+  { id: 23, name: 'Macaron Tower', category: 'towers', price: 225, desc: '12" macaron tower. Larger sizes available on request.', image: IMG + 'tower-macaron.jpg', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
+  { id: 24, name: 'Éclair Tower', category: 'towers', price: 225, desc: '12" éclair tower. Larger sizes available on request.', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
+  { id: 25, name: 'Madeleine Tower', category: 'towers', price: 225, desc: '12" madeleine tower. Larger sizes available on request.', image: IMG + 'tower-madeleine.jpg', badge: 'Showstopper', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
+  { id: 26, name: 'Cream Puff Tower', category: 'towers', price: 225, desc: '12" cream puff tower. Larger sizes available on request.', options: [{ label: 'Size', type: 'single', choices: ['12"', 'Larger — request a quote'] }] },
+  { id: 27, name: 'Fruit Tower', category: 'towers', price: null, inquire: true, desc: 'Seasonal fruit tower — cherry, grape, strawberry, blueberry, blackberry, peach, or mandarin. Price varies per season and size.', image: IMG + 'tower-fruit-cherry.jpg', options: [{ label: 'Size', type: 'single', choices: ['12"', '15"', '20"', '26"', 'Larger — request a quote'] }, { label: 'Fruit', type: 'single', choices: ['Cherry', 'Grape', 'Strawberry', 'Blueberry', 'Blackberry', 'Peach', 'Mandarin'] }] },
 
   /* ===== Macarons ===== */
   { id: 28, name: 'Macaron — Raspberry', category: 'macarons', price: 2.5, desc: 'French macaron, raspberry.', image: IMG + 'macaron-raspberry.jpg', badge: 'Popular' },
@@ -45,14 +51,14 @@ const products = [
   { id: 33, name: 'Macaron — Hazelnut', category: 'macarons', price: 2.5, desc: 'French macaron, hazelnut.', image: IMG + 'macaron-hazelnut.jpg' },
   { id: 34, name: 'Macaron — Vanilla Bean', category: 'macarons', price: 2.5, desc: 'French macaron, vanilla bean.', image: IMG + 'macaron-vanilla-bean.jpg' },
 
-  /* ===== Pastries ===== */
-  { id: 35, name: 'Croissant', category: 'pastries', price: 3.5, desc: 'Butter croissant.', image: IMG + 'croissant.jpg' },
-  { id: 36, name: 'Filled Croissant', category: 'pastries', price: 4.5, desc: 'Vanilla custard or Nutella, icing sugar.', image: IMG + 'filled-croissant.jpg', options: [{ label: 'Filling', type: 'single', choices: ['Vanilla Custard', 'Nutella'] }] },
-  { id: 37, name: 'Almond Croissant', category: 'pastries', price: 5.5, desc: 'Frangipane, toasted almonds, icing sugar.', image: IMG + 'almond-croissant.jpg' },
-  { id: 38, name: 'Old Fashioned Donut', category: 'pastries', price: 5, desc: 'Old fashioned style donut.', image: IMG + 'donut.jpg', options: [{ label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls', 'Multicoloured sprinkles'] }] },
-  { id: 39, name: 'Cake Pop', category: 'pastries', price: 5, desc: 'Vanilla or chocolate.', image: IMG + 'cake-pop.jpg', options: [{ label: 'Flavour', type: 'single', choices: ['Vanilla', 'Chocolate'] }, { label: 'Ball', type: 'single', choices: ['Ball up', 'Ball down'] }, { label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls', 'Multicoloured sprinkles'] }], addon: { label: 'Add a flower', price: 1 } },
+  /* ===== Pastries — ascending by price ===== */
+  { id: 35, name: 'Croissant', category: 'pastries', price: 2.75, desc: 'Butter croissant.', image: IMG + 'croissant.jpg' },
   { id: 40, name: 'Rice Krispies Square', category: 'pastries', price: 4, desc: 'Homemade marshmallow, vanilla, Rice Krispies.', image: IMG + 'rice-krispies.jpg', options: [{ label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls'] }] },
   { id: 41, name: 'Chocolate-Dipped Strawberries', category: 'pastries', price: 4, desc: 'Sold in sets of three.', image: IMG + 'dipped-strawberries.jpg', options: [{ label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls'] }] },
+  { id: 36, name: 'Filled Croissant', category: 'pastries', price: 4, desc: 'Vanilla custard or Nutella, icing sugar.', image: IMG + 'filled-croissant.jpg', options: [{ label: 'Filling', type: 'single', choices: ['Vanilla Custard', 'Nutella'] }] },
+  { id: 37, name: 'Almond Croissant', category: 'pastries', price: 4.5, desc: 'Frangipane, toasted almonds, icing sugar.', image: IMG + 'almond-croissant.jpg' },
+  { id: 38, name: 'Old Fashioned Donut', category: 'pastries', price: 5, desc: 'Old fashioned style donut.', image: IMG + 'donut.jpg', options: [{ label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls', 'Multicoloured sprinkles'] }] },
+  { id: 39, name: 'Cake Pop', category: 'pastries', price: 5, desc: 'Vanilla or chocolate.', image: IMG + 'cake-pop.jpg', options: [{ label: 'Flavour', type: 'single', choices: ['Vanilla', 'Chocolate'] }, { label: 'Ball', type: 'single', choices: ['Ball up', 'Ball down'] }, { label: 'Dip colour', type: 'text', optional: true }, { label: 'Drizzle colour', type: 'text', optional: true }, { label: 'Topping', type: 'single', optional: true, choices: ['Gold sugar', 'Silver sugar', 'White pearls', 'Multicoloured sprinkles'] }], addon: { label: 'Add a flower', price: 1 } },
 ];
 
 const CATEGORY_LABELS = {
@@ -187,8 +193,10 @@ function renderOptionChips(p, groupIndex) {
       <div class="flavor-chips" role="group" aria-label="${escapeHtml(opt.label)}">
         ${opt.choices.map((c) => {
           const label = choiceLabel(c);
+          const price = choicePrice(c);
           const selected = customizeChoices[groupIndex] === label;
-          return `<button type="button" class="flavor-chip${selected ? ' selected' : ''}" data-group="${groupIndex}" data-choice="${escapeHtml(label)}" aria-pressed="${selected}">${escapeHtml(label)}</button>`;
+          const priceTag = price != null ? `<span class="chip-price">${money(price)}</span>` : '';
+          return `<button type="button" class="flavor-chip${selected ? ' selected' : ''}" data-group="${groupIndex}" data-choice="${escapeHtml(label)}" aria-pressed="${selected}">${escapeHtml(label)}${priceTag}</button>`;
         }).join('')}
       </div>
     </div>`;
@@ -605,13 +613,20 @@ function renderProducts(filter) {
 
   activeCustomizeId = null;
 
-  grid.innerHTML = filtered.map((p) => {
+  /* One flat grid, cheapest to priciest. The 1"/2" badge does the
+     differentiating so no tier headings are needed. */
+  const ordered = filter === 'mini'
+    ? [...filtered].sort((a, b) => minPrice(a) - minPrice(b))
+    : filtered;
+
+  const cardHtml = (p) => {
     const btn = p.inquire
       ? `<a href="#contact" class="add-btn">Inquire</a>`
       : `<button type="button" class="add-btn" data-add="${p.id}">Add</button>`;
     const imageHtml = `
         <div class="product-image${p.image ? '' : ' product-image--blank'}">
           ${p.badge ? `<span class="product-badge">${escapeHtml(p.badge)}</span>` : ''}
+          ${p.dsizes ? `<span class="product-badge product-badge--size">1" / 2"</span>` : ''}
           ${p.image ? `<img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" width="600" height="600">` : ''}
         </div>`;
     return `
@@ -628,7 +643,9 @@ function renderProducts(filter) {
         </div>
       </article>
     `;
-  }).join('');
+  };
+
+  grid.innerHTML = ordered.map(cardHtml).join('');
 
   bindProductEvents();
 }

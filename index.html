@@ -5,21 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pâtisserie V. Marie | Vaughan</title>
 <meta name="description" content="Patisserie and cake school in Vaughan. Fruit cakes, pastries, and celebrations.">
-<meta name="theme-color" content="#F7F4F0">
+<meta name="theme-color" content="#00ACED">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=15">
+<link rel="icon" type="image/png" sizes="32x32" href="Assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="Assets/brand/apple-touch-icon.png">
+<link rel="preload" href="Assets/fonts/GothamBook.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="Assets/fonts/GothamBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css?v=24">
 </head>
 <body class="page-shop">
 
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <div class="nav-left">
-      <a href="index.html" class="nav-logo">V.<em>Marie</em></a>
-      <a href="https://maps.google.com/?q=8400+Jane+St+Vaughan+ON" target="_blank" rel="noopener" class="nav-location">8400 Jane St, Vaughan</a>
-    </div>
+    <div class="nav-left"></div>
     <div class="nav-end">
       <div class="nav-links" id="navLinksDesktop">
         <a href="#about">About</a>
@@ -54,12 +52,16 @@
 </div>
 
 <section class="hero hero--boutique">
-  <div class="hero-atmosphere" aria-hidden="true"></div>
   <div class="hero-content">
-    <h1>Pâtisserie<br>V.<em>Marie</em></h1>
-    <div class="hero-buttons">
-      <a href="#store" class="btn btn-primary">Shop</a>
-      <a href="events.html" class="btn btn-outline-dark">Events</a>
+    <img
+      class="hero-logo"
+      src="Assets/brand/logo-hero.svg"
+      alt="Pâtisserie V. Marie"
+      width="609" height="609"
+      fetchpriority="high">
+    <div class="hero-actions">
+      <a href="#store" class="btn btn-hero">Shop</a>
+      <a href="events.html" class="btn btn-hero-ghost">Cake School</a>
     </div>
   </div>
 </section>
@@ -158,10 +160,12 @@
   <p class="section-label">Cakes</p>
   <h2 class="section-title">Flavours</h2>
   <div class="gold-line"></div>
-  <div class="flavours-grid">
-    <article class="flavour-card fade-in">
-      <h3>Sponge Cakes</h3>
-      <ul>
+  <p class="flavours-lead">Choose <strong>one sponge</strong> and <strong>one filling</strong>.</p>
+
+  <div class="flavours-grid flavours-grid--pair">
+    <article class="flavour-card flavour-card--step fade-in">
+      <h3>Sponge</h3>
+      <ul class="flavour-list">
         <li>Vanilla Bean</li>
         <li>Chocolate</li>
         <li>Marble</li>
@@ -172,37 +176,47 @@
         <li>Red Velvet</li>
       </ul>
     </article>
-    <article class="flavour-card fade-in">
-      <h3>Buttercream Fillings</h3>
-      <ul>
-        <li>Vanilla Bean</li>
-        <li>Vanilla bean with dulce de leche drizzle and sea salt</li>
-        <li>Chocolate</li>
-        <li>Hazelnut and Nutella</li>
-        <li>Raspberry</li>
-        <li>French Toast</li>
-        <li>Mocha</li>
-        <li>Cookies and Cream</li>
-        <li>Biscoff</li>
-        <li>Strawberry</li>
-        <li>S'more</li>
-      </ul>
-    </article>
-    <article class="flavour-card fade-in">
-      <h3>Custard Fillings</h3>
-      <ul>
-        <li>Vanilla Bean</li>
-        <li>Chocolate</li>
-        <li>Hazelnut and Nutella</li>
-        <li>Mocha</li>
-        <li>French Toast</li>
-        <li>Lemon</li>
-        <li>S'more</li>
-        <li>Strawberry Shortcake <span class="extra">Extra charge</span></li>
-        <li>Mixed Berry <span class="extra">Extra charge</span></li>
-      </ul>
+
+    <div class="flavours-connector" aria-hidden="true"><span>+</span></div>
+
+    <article class="flavour-card flavour-card--step fade-in">
+      <h3>Filling</h3>
+      <div class="flavour-columns">
+        <div class="flavour-column">
+          <p class="flavour-subhead">Buttercream</p>
+          <ul class="flavour-list">
+            <li>Vanilla Bean</li>
+            <li>Vanilla bean, dulce de leche drizzle, sea salt</li>
+            <li>Chocolate</li>
+            <li>Hazelnut and Nutella</li>
+            <li>Raspberry</li>
+            <li>French Toast</li>
+            <li>Mocha</li>
+            <li>Cookies and Cream</li>
+            <li>Biscoff</li>
+            <li>Strawberry</li>
+            <li>S'more</li>
+          </ul>
+        </div>
+        <div class="flavour-column">
+          <p class="flavour-subhead">Custard</p>
+          <ul class="flavour-list">
+            <li>Vanilla Bean</li>
+            <li>Chocolate</li>
+            <li>Hazelnut and Nutella</li>
+            <li>Mocha</li>
+            <li>French Toast</li>
+            <li>Lemon</li>
+            <li>S'more</li>
+            <li>Strawberry Shortcake <span class="extra">Extra charge</span></li>
+            <li>Mixed Berry <span class="extra">Extra charge</span></li>
+          </ul>
+        </div>
+      </div>
     </article>
   </div>
+
+  <p class="flavours-note">Tiered cakes can be a different flavour on every tier at no additional charge.</p>
 </section>
 
 <section class="contact" id="contact">
@@ -249,24 +263,24 @@
 
 <section class="gallery gallery--bleed" id="gallery">
   <p class="section-label">Instagram</p>
-  <h2 class="section-title fade-in">@patisserievmarie</h2>
+  <h2 class="section-title fade-in"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener">@patisserievmarie</a></h2>
   <div class="gold-line fade-in"></div>
   <div class="gallery-grid fade-in">
-    <div class="gallery-item"><img src="Assets/images/tower-fruit-cherry.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/cupcake-real.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/macaron-raspberry.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/verrine-ferrero-rocher.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/wedding-cake.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/cream-puff.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/frutti-di-bosco-tart.jpg" alt="" loading="lazy"></div>
-    <div class="gallery-item"><img src="Assets/images/tower-cream-puff.jpg" alt="" loading="lazy"></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/tower-fruit-cherry.jpg" alt="Cherry fruit tower" loading="lazy"></a></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/cupcake-real.jpg" alt="Cupcakes" loading="lazy"></a></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/macaron-raspberry.jpg" alt="Raspberry macaron" loading="lazy"></a></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/verrine-ferrero-rocher.jpg" alt="Ferrero Rocher verrine" loading="lazy"></a></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/wedding-cake.jpg" alt="Wedding cake" loading="lazy"></a></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/cream-puff.jpg" alt="Salted caramel cream puff" loading="lazy"></a></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/frutti-di-bosco-tart.jpg" alt="Frutti di bosco tart" loading="lazy"></a></div>
+    <div class="gallery-item"><a href="https://www.instagram.com/patisserievmarie/" target="_blank" rel="noopener" aria-label="View on Instagram"><img src="Assets/images/tower-macaron.jpg" alt="Macaron tower" loading="lazy"></a></div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <h3>V.<em>Marie</em></h3>
+      <img class="footer-mark" src="Assets/brand/logo-white.png" alt="Pâtisserie V. Marie" width="230" height="182" loading="lazy">
       <p>Vaughan, Ontario.</p>
       <div class="footer-social">
         <a href="https://instagram.com/patisserievmarie" target="_blank" rel="noopener" aria-label="Instagram">
@@ -346,7 +360,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/shop.js?v=16"></script>
+<script src="js/shop.js?v=19"></script>
 <script>
   const nav = document.getElementById('nav');
   const navLinks = document.getElementById('navLinks');
@@ -366,9 +380,26 @@
     document.body.classList.add('menu-open');
   }
 
+  /* Nav starts blue over the hero, then swaps to the neutral site chrome
+     as soon as the hero bottom passes under it. */
+  const hero = document.querySelector('.hero--boutique');
+  const navSwitch = () => {
+    const navH = nav.offsetHeight;
+    let onPage = window.scrollY > 40;
+    if (hero) {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      onPage = window.scrollY + navH >= heroBottom - 1;
+    }
+    nav.classList.toggle('nav--on-page', onPage);
+  };
+
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
+    navSwitch();
   }, { passive: true });
+
+  window.addEventListener('resize', navSwitch, { passive: true });
+  navSwitch();
 
   navToggle.addEventListener('click', () => {
     if (navLinks.classList.contains('open')) closeMobileMenu();
